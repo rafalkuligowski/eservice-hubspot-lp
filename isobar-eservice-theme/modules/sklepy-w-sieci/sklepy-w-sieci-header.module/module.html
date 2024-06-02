@@ -1,0 +1,15 @@
+<!-- module html  -->
+<div class="sklepy-w-sieci__header-module">
+    <div class="header-module__header-wrapper">
+        <div class="header-module__header-logos">   
+            {% for logo in module.logos %}
+            {% if logo.link.url.href %} <a href="{{logo.link.url.href}}" {% if logo.link.open_in_new_tab %} target="_blank"{% endif %}> {% endif %}    
+                <img src="{{logo.logo_image.src}}" alt="{{logo.logo_image.alt}}" />
+            {% if logo.link.url.href %} </a> {% endif %}  
+            {% endfor %}
+        </div>
+        <div class="header-module__link">   
+            {% if module.link_group.link_text %}<a href="#{{module.link_group.link_target}}" class="button button--primary">{{module.link_group.link_text}}</a>{% endif %}
+        </div>
+    </div>
+</div>

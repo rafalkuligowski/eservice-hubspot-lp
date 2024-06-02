@@ -1,0 +1,157 @@
+/* @import url('http://example.com/example_style.css'); */
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/* Add them above this section                 */
+/***********************************************/
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+
+.row-number-1 {
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .row-number-1 .row-number-3 {
+    position: absolute;
+    top: 72%;
+    left: 23%;
+  }
+}
+
+.row-number-8 > .row-fluid {
+  background-color: #e5ebf9;
+  border-bottom-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+.row-number-8 > .row-fluid .hs-image-widget {
+  transform: translate(0px, -40px);
+}
+
+.row-number-13 {
+  background-position-x: 30% !important;
+}
+
+.row-number-23 {
+  background-position-x: 70% !important;
+}
+
+.row-number-13 > .row-fluid  > .widget-span,
+.row-number-18 > .row-fluid  > .widget-span,
+.row-number-23 > .row-fluid  > .widget-span {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 8px 32px #002C8414;
+  border-radius: 16px;
+  opacity: 1;
+  width: 280px;
+  height: 170px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.row-number-13 > .row-fluid  > .widget-span .hs_cos_wrapper,
+.row-number-18 > .row-fluid  > .widget-span .hs_cos_wrapper,
+.row-number-23 > .row-fluid  > .widget-span .hs_cos_wrapper {
+  text-align: center;
+}
+
+form {
+  padding: 0;
+}
+
+form a {
+  color: #0140BE !important;
+  text-decoration: underline !important;
+}
+
+input[type="submit"] {
+  background: transparent linear-gradient(180deg, #004BE2 0%, #0140BD 75%, #0338A2 100%) 0% 0% no-repeat padding-box;
+  border-radius: 8px !important;
+  opacity: 1;
+  max-width: 350px;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cell_1600936382044-vertical-alignment {
+  width: 361px;
+  height: 332px;
+  background: transparent linear-gradient(180deg, #004BE2 0%, #0140BD 75%, #0338A2 100%) 0% 0% no-repeat padding-box;
+  border-radius: 50px 0px;
+  opacity: 1;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.row-number-32 > .row-fluid .span4:first-child{
+  position: relative;
+}
+
+.row-number-34 img {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translate(0, -50%);
+}
+
+.row-number-35,
+.row-number-36 {
+  position: relative;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 8px 32px #002C8414;
+  border-radius: 16px;
+  opacity: 1;
+  height: 332px;
+  padding: 30px 25px;
+  margin-bottom: 35px;
+}
+
+.row-number-35 .cta_button,
+.row-number-36 .cta_button {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 50%);
+  margin-right: 0 !important;
+}
+
+@media (max-width: 1139px) and (min-width: 768px) {
+  .row-number-32 > .row-fluid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .row-number-32 > .row-fluid > .span4 {
+    width: 48%;
+  }
+}
+
+@media (max-width: 1139px) and (min-width: 768px) {
+  .row-number-28 > .row-fluid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .row-number-28 > .row-fluid > .span6 {
+    width: 100%;
+  }
+}
+
+
+
+
+
+

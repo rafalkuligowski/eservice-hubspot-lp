@@ -1,0 +1,388 @@
+[ {
+  "id" : "row_direction",
+  "name" : "row_direction",
+  "display_width" : null,
+  "label" : "Footer column direction",
+  "required" : false,
+  "locked" : true,
+  "display" : "select",
+  "choices" : [ [ "flex-start", "Left" ], [ "center", "Center" ], [ "space-between", "Space" ], [ "flex-end", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "flex-start"
+}, {
+  "id" : "3323284e-a6a0-0c01-ad5f-b37518c2c2ed",
+  "name" : "column_1",
+  "display_width" : null,
+  "label" : "Column 1",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "column_1.is_visible",
+    "name" : "is_visible",
+    "display_width" : null,
+    "label" : "Is column visible? (active)",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "column_1.image_position",
+    "name" : "image_position",
+    "display_width" : null,
+    "label" : "Top image position",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "left"
+  }, {
+    "id" : "5e8dbfe2-aa0b-610d-57bb-723300fefb4b",
+    "name" : "column_1_text",
+    "display_width" : null,
+    "label" : "Column 1 - text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "column_1.column_1_text_2",
+    "name" : "column_1_text_2",
+    "display_width" : null,
+    "label" : "Column 1 - text second row",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "column_1.column_1_richtext",
+    "name" : "column_1_richtext",
+    "display_width" : null,
+    "label" : "Column 1 - richtext",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "184ad325-8366-19af-39bb-4ebd0db8d295",
+  "name" : "column_2",
+  "display_width" : null,
+  "label" : "Column 2",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "column_2.is_visible",
+    "name" : "is_visible",
+    "display_width" : null,
+    "label" : "Is column visible? (active)",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "fd270d2e-94b9-5d90-8c83-62e400e9a167",
+    "name" : "menu_column_title",
+    "display_width" : null,
+    "label" : "Menu column title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "2cd4dbdd-3cb2-8d80-2c21-b07301e472a4",
+    "name" : "menu_link",
+    "display_width" : null,
+    "label" : "Menu link",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "6a88d546-a4e2-516d-c29c-8c5ae0d67347",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "dfc3513e-b7df-03e9-f0c5-9e5d68191535",
+      "name" : "menu_column_link",
+      "display_width" : null,
+      "label" : "Menu column link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "6a88d546-a4e2-516d-c29c-8c5ae0d67347",
+      "name" : "menu_column_link_text",
+      "display_width" : null,
+      "label" : "Menu column link text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "menu_column_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "menu_link" : {
+      "menu_column_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "fac1843b-1767-bc6e-4cc0-56a752117238",
+  "name" : "column_3",
+  "display_width" : null,
+  "label" : "Column 3",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "column_3.is_visible",
+    "name" : "is_visible",
+    "display_width" : null,
+    "label" : "Is column visible? (active)",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "9236679b-d7f7-75cf-4065-bbf2f68814d6",
+    "name" : "menu_2_column_title",
+    "display_width" : null,
+    "label" : "Menu 2 column title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "9beebe25-4c61-9d83-ee50-8fd5950bc314",
+    "name" : "menu_link",
+    "display_width" : null,
+    "label" : "Menu link",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "e344c408-353a-b61e-b878-4eb97b66790f",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "7855f9d3-5e12-3b49-1099-e4297526357e",
+      "name" : "menu_2_column_link",
+      "display_width" : null,
+      "label" : "Menu 2 column link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "e344c408-353a-b61e-b878-4eb97b66790f",
+      "name" : "menu_2_column_link_text",
+      "display_width" : null,
+      "label" : "Menu 2 column link text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "menu_2_column_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "menu_link" : {
+      "menu_2_column_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "cd78a0c4-b7e8-12f7-6966-a2555ff6af15",
+  "name" : "column_4",
+  "display_width" : null,
+  "label" : "Column 4",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "column_4.is_visible",
+    "name" : "is_visible",
+    "display_width" : null,
+    "label" : "Is column visible? (active)",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "d731c8d6-e570-b74e-b7c6-5812e834a5d2",
+    "name" : "column_4_title",
+    "display_width" : null,
+    "label" : "Column 4 - title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "2cd01f22-949b-1214-f960-42f47482ceb5",
+    "name" : "column_4_button_link",
+    "display_width" : null,
+    "label" : "Column 4 - button link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "107244e4-5e24-ae13-d67a-2f96a77c5e17",
+    "name" : "column_4_button_text",
+    "display_width" : null,
+    "label" : "Column 4 - button text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "b077cf0d-a48d-af41-49f7-8f030a2b308c",
+  "name" : "column_5",
+  "display_width" : null,
+  "label" : "Column 5",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "column_5.is_visible",
+    "name" : "is_visible",
+    "display_width" : null,
+    "label" : "Is column visible? (active)",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "7496b188-db7e-1252-7f0b-3c1cbe1e3985",
+    "name" : "column_5_title",
+    "display_width" : null,
+    "label" : "Column 5 - title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "431f9db6-3098-20e2-beee-0c127eef0ba5",
+    "name" : "column_5_text",
+    "display_width" : null,
+    "label" : "Column 5 - text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+} ]

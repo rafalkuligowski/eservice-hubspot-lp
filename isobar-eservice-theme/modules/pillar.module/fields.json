@@ -1,0 +1,149 @@
+[ {
+  "id" : "3ba23443-c0d7-3612-32e8-8a0f064938f9",
+  "name" : "table_of_contents_title",
+  "display_width" : null,
+  "label" : "Table of contents title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Chapters"
+}, {
+  "id" : "column_width",
+  "name" : "column_width",
+  "display_width" : null,
+  "label" : "Ammount of columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 1,
+  "max" : 12,
+  "step" : 1,
+  "type" : "number",
+  "default" : 12
+}, {
+  "id" : "alignment",
+  "name" : "alignment",
+  "display_width" : null,
+  "label" : "Alignment",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "flex-start", "Left" ], [ "center", "Center" ], [ "flex-end", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "center"
+}, {
+  "id" : "b61bc985-a50f-e1ae-12a4-3edf1dcdccd3",
+  "name" : "section_block",
+  "display_width" : null,
+  "label" : "Section Block",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 20,
+    "sorting_label_field" : "2b068cc4-a0f3-63f6-138a-d3d37bd5a807",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "2b068cc4-a0f3-63f6-138a-d3d37bd5a807",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Section title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Title"
+  }, {
+    "id" : "381c466b-207c-118f-85ca-81e16f5727bf",
+    "name" : "contents",
+    "display_width" : null,
+    "label" : "Section content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique magna sit amet purus gravida quis blandit. Scelerisque felis imperdiet proin fermentum leo vel orci. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Cursus mattis molestie a iaculis. Integer quis auctor elit sed vulputate. Ipsum faucibus vitae aliquet nec ullamcorper sit. Morbi enim nunc faucibus a pellentesque. Suspendisse interdum consectetur libero id faucibus. Eget aliquet nibh praesent tristique magna sit. Sollicitudin tempor id eu nisl nunc mi. Facilisis volutpat est velit egestas. Purus sit amet luctus venenatis lectus magna fringilla. Sit amet cursus sit amet dictum sit amet. Aenean sed adipiscing diam donec. Egestas egestas fringilla phasellus faucibus scelerisque. Gravida rutrum quisque non tellus orci ac auctor.<br><br>Eget aliquet nibh praesent tristique. Massa enim nec dui nunc mattis enim ut. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Lectus quam id leo in vitae turpis massa sed. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. At varius vel pharetra vel turpis nunc eget lorem. Mollis aliquam ut porttitor leo a diam sollicitudin. Consequat interdum varius sit amet mattis vulputate enim nulla. Fermentum posuere urna nec tincidunt praesent semper. Neque vitae tempus quam pellentesque nec nam aliquam. Id semper risus in hendrerit gravida rutrum quisque non tellus.<br><br>Sed cras ornare arcu dui vivamus arcu felis bibendum. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Facilisis leo vel fringilla est. A lacus vestibulum sed arcu non odio euismod. Nulla malesuada pellentesque elit eget gravida cum. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Blandit cursus risus at ultrices. Volutpat maecenas volutpat blandit aliquam etiam erat velit. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Neque vitae tempus quam pellentesque. Bibendum ut tristique et egestas quis ipsum suspendisse. At tempor commodo ullamcorper a lacus vestibulum. Eget nullam non nisi est sit amet facilisis magna. Integer eget aliquet nibh praesent tristique. Molestie at elementum eu facilisis sed odio morbi quis commodo."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "title" : "Title",
+    "contents" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique magna sit amet purus gravida quis blandit. Scelerisque felis imperdiet proin fermentum leo vel orci. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Cursus mattis molestie a iaculis. Integer quis auctor elit sed vulputate. Ipsum faucibus vitae aliquet nec ullamcorper sit. Morbi enim nunc faucibus a pellentesque. Suspendisse interdum consectetur libero id faucibus. Eget aliquet nibh praesent tristique magna sit. Sollicitudin tempor id eu nisl nunc mi. Facilisis volutpat est velit egestas. Purus sit amet luctus venenatis lectus magna fringilla. Sit amet cursus sit amet dictum sit amet. Aenean sed adipiscing diam donec. Egestas egestas fringilla phasellus faucibus scelerisque. Gravida rutrum quisque non tellus orci ac auctor.<br><br>Eget aliquet nibh praesent tristique. Massa enim nec dui nunc mattis enim ut. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Lectus quam id leo in vitae turpis massa sed. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. At varius vel pharetra vel turpis nunc eget lorem. Mollis aliquam ut porttitor leo a diam sollicitudin. Consequat interdum varius sit amet mattis vulputate enim nulla. Fermentum posuere urna nec tincidunt praesent semper. Neque vitae tempus quam pellentesque nec nam aliquam. Id semper risus in hendrerit gravida rutrum quisque non tellus.<br><br>Sed cras ornare arcu dui vivamus arcu felis bibendum. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Facilisis leo vel fringilla est. A lacus vestibulum sed arcu non odio euismod. Nulla malesuada pellentesque elit eget gravida cum. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Blandit cursus risus at ultrices. Volutpat maecenas volutpat blandit aliquam etiam erat velit. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Neque vitae tempus quam pellentesque. Bibendum ut tristique et egestas quis ipsum suspendisse. At tempor commodo ullamcorper a lacus vestibulum. Eget nullam non nisi est sit amet facilisis magna. Integer eget aliquet nibh praesent tristique. Molestie at elementum eu facilisis sed odio morbi quis commodo."
+  }, {
+    "title" : "Title",
+    "contents" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique magna sit amet purus gravida quis blandit. Scelerisque felis imperdiet proin fermentum leo vel orci. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Cursus mattis molestie a iaculis. Integer quis auctor elit sed vulputate. Ipsum faucibus vitae aliquet nec ullamcorper sit. Morbi enim nunc faucibus a pellentesque. Suspendisse interdum consectetur libero id faucibus. Eget aliquet nibh praesent tristique magna sit. Sollicitudin tempor id eu nisl nunc mi. Facilisis volutpat est velit egestas. Purus sit amet luctus venenatis lectus magna fringilla. Sit amet cursus sit amet dictum sit amet. Aenean sed adipiscing diam donec. Egestas egestas fringilla phasellus faucibus scelerisque. Gravida rutrum quisque non tellus orci ac auctor.<br><br>Eget aliquet nibh praesent tristique. Massa enim nec dui nunc mattis enim ut. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Lectus quam id leo in vitae turpis massa sed. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. At varius vel pharetra vel turpis nunc eget lorem. Mollis aliquam ut porttitor leo a diam sollicitudin. Consequat interdum varius sit amet mattis vulputate enim nulla. Fermentum posuere urna nec tincidunt praesent semper. Neque vitae tempus quam pellentesque nec nam aliquam. Id semper risus in hendrerit gravida rutrum quisque non tellus.<br><br>Sed cras ornare arcu dui vivamus arcu felis bibendum. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Facilisis leo vel fringilla est. A lacus vestibulum sed arcu non odio euismod. Nulla malesuada pellentesque elit eget gravida cum. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Blandit cursus risus at ultrices. Volutpat maecenas volutpat blandit aliquam etiam erat velit. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Neque vitae tempus quam pellentesque. Bibendum ut tristique et egestas quis ipsum suspendisse. At tempor commodo ullamcorper a lacus vestibulum. Eget nullam non nisi est sit amet facilisis magna. Integer eget aliquet nibh praesent tristique. Molestie at elementum eu facilisis sed odio morbi quis commodo."
+  }, {
+    "title" : "Title",
+    "contents" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique magna sit amet purus gravida quis blandit. Scelerisque felis imperdiet proin fermentum leo vel orci. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Cursus mattis molestie a iaculis. Integer quis auctor elit sed vulputate. Ipsum faucibus vitae aliquet nec ullamcorper sit. Morbi enim nunc faucibus a pellentesque. Suspendisse interdum consectetur libero id faucibus. Eget aliquet nibh praesent tristique magna sit. Sollicitudin tempor id eu nisl nunc mi. Facilisis volutpat est velit egestas. Purus sit amet luctus venenatis lectus magna fringilla. Sit amet cursus sit amet dictum sit amet. Aenean sed adipiscing diam donec. Egestas egestas fringilla phasellus faucibus scelerisque. Gravida rutrum quisque non tellus orci ac auctor.<br><br>Eget aliquet nibh praesent tristique. Massa enim nec dui nunc mattis enim ut. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Feugiat in fermentum posuere urna nec tincidunt praesent semper. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Lectus quam id leo in vitae turpis massa sed. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. At varius vel pharetra vel turpis nunc eget lorem. Mollis aliquam ut porttitor leo a diam sollicitudin. Consequat interdum varius sit amet mattis vulputate enim nulla. Fermentum posuere urna nec tincidunt praesent semper. Neque vitae tempus quam pellentesque nec nam aliquam. Id semper risus in hendrerit gravida rutrum quisque non tellus.<br><br>Sed cras ornare arcu dui vivamus arcu felis bibendum. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam. Facilisis leo vel fringilla est. A lacus vestibulum sed arcu non odio euismod. Nulla malesuada pellentesque elit eget gravida cum. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Blandit cursus risus at ultrices. Volutpat maecenas volutpat blandit aliquam etiam erat velit. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Neque vitae tempus quam pellentesque. Bibendum ut tristique et egestas quis ipsum suspendisse. At tempor commodo ullamcorper a lacus vestibulum. Eget nullam non nisi est sit amet facilisis magna. Integer eget aliquet nibh praesent tristique. Molestie at elementum eu facilisis sed odio morbi quis commodo."
+  } ]
+}, {
+  "id" : "ec371515-049c-660c-3fce-fe5ac6fb7269",
+  "name" : "enable_back_to_top",
+  "display_width" : null,
+  "label" : "Enable 'Back to top'",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "a52a4a03-1fee-3eb9-2cc0-05e671ebbcd8",
+  "name" : "back_to_top",
+  "display_width" : null,
+  "label" : "'Back to top' text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "ec371515-049c-660c-3fce-fe5ac6fb7269",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "^ Back to Top"
+}, {
+  "id" : "20fcaaf8-127e-fade-b519-4bb89306f81b",
+  "name" : "enable_top_spacing",
+  "display_width" : null,
+  "label" : "Enable top spacing",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "54b52ffa-0462-9c64-7e9b-7d49bcd04fca",
+  "name" : "top_spacing",
+  "display_width" : null,
+  "label" : "Top spacing",
+  "help_text" : "Adding a number (in px) to the top of the module helps account for items such as a fixed header.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "20fcaaf8-127e-fade-b519-4bb89306f81b",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "text",
+  "min" : 0,
+  "step" : 1,
+  "type" : "number",
+  "default" : 100
+} ]

@@ -1,0 +1,24 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Boilerplate - 404 error template
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content"  class="body-container-wrapper error-page center">
+  {% dnd_area 'dnd_area' class='body-container body-container--home', label='Main section' %}
+    {% dnd_section
+      class="content-wrapper center error-page",
+      vertical_alignment='MIDDLE'
+    %}
+    {% module "header" path="@hubspot/header", value="Ups...", "header_tag"="h1" %}
+    {% module "text" path="@hubspot/text", value="Strona której szukasz nie istnieje lub zmieniła swój adres. Powiedz nam czego szukasz?" %}
+      {% module "search_input" path="@hubspot/search_input" %}
+    {% end_dnd_section %}
+    {% module "error-page" path="../modules/error-page.module/" %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

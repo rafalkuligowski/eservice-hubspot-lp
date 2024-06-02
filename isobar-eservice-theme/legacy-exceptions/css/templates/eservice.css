@@ -1,0 +1,42 @@
+/* @import url('http://example.com/example_style.css'); */
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/* Add them above this section                 */
+/***********************************************/
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+
+.row-number-1 {
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .row-number-1 .row-number-3 {
+    position: absolute;
+    top: 67%;
+    left: 24.5%;
+    transform: translateY(-50%);
+  }
+}
+
+.row-number-10 .row-fluid {
+  background: var(--unnamed-color-e5ebf9) 0% 0% no-repeat padding-box;
+  background: #E5EBF9 0% 0% no-repeat padding-box;
+  border-radius: 0px 50px;
+  opacity: 1;
+}
+
+.row-number-13 {
+  background-position-x: 75% !important;
+  background-position-y: 90% !important;
+}
+
+.row-number-16 .row-fluid {
+    background: var(--unnamed-color-e5ebf9) 0% 0% no-repeat padding-box;
+  background: #E5EBF9 0% 0% no-repeat padding-box;
+  border-radius: 0px 50px;
+  opacity: 1;
+}

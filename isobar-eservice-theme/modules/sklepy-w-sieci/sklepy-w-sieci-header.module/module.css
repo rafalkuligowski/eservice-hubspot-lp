@@ -1,0 +1,36 @@
+.sklepy-w-sieci__header-module {
+    width: 100%;
+    height: 100px;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.header-module__header-wrapper {
+    width: 100%;
+    max-width: 1232px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-module__header-logos {
+    max-width: 54%;
+    height: 100%;
+    display: flex;
+}
+
+.header-module__header-logos img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    align-self: center;
+    padding-right: 50px;
+}
+
+.header-module__link {
+    max-width: 39%;
+}

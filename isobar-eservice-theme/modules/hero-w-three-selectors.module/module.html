@@ -1,0 +1,132 @@
+<div class="hero__wrapper hero-with-three-selectors-module">
+    <div class="hero__image hero__image-high">
+        <img
+                src="{{ module.image_field.src }}"
+                alt="{{module.image_field.alt}}"
+                style="{% if module.number_field %}object-position: 50% {{ 50 - module.number_field / 10 / 2 }}%{% endif %}"
+        />
+
+        {% if module.show_title %}
+            <div class="hero__text-content">
+                <h1>{{module.title}}</h1>
+                {% if module.help_text %}
+                    <p class="hero__help-text">{{module.help_text}}</p>
+                {% endif %}
+            </div>
+            <div class="hero__image-mask">&nbsp;</div>
+        {% endif %}
+        
+    </div>
+
+    <div class="hero__selectors-wrapper row-fluid">
+        <div class="hero__selectors-wrapper__row columns2">
+            <div class="shadow-box-wrapper-module__shadow-box-columnwrap span4 shadow-box-columnwrap--left-selector">
+                <div class="shadow-box__wrapper">
+                    {% if  module.left_selector.image_field.src %}
+                    <div class="shadow-box__image">
+                        <img src="{{ module.left_selector.image_field.src }}" alt="{{module.left_selector.image_field.alt}}" />
+                    </div>
+                    {% endif %}
+                    <div class="shadow-box__header">
+                        <p><strong>
+                            {{ module.left_selector.title_text }}
+                        </strong></p>
+                    </div>
+                    <div class="shadow-box__content">
+                        {{ module.left_selector.content }}
+                    </div>
+                    <div class="shadow-box__buttons-wrapper">
+                        {% if module.left_selector.info_button_link.url.href || module.left_selector.info_button_anchor %}
+                            <a 
+                                href="{{module.left_selector.info_button_link.url.href}}{% if module.left_selector.info_button_anchor %}#{{module.left_selector.info_button_anchor}}{% endif %}" 
+                            class="button info-button" target="{% if module.left_selector.info_button_link.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{module.left_selector.info_button_text}}</a>
+                        {% endif %}
+                        {% if module.left_selector.info_button_link.url.href || module.left_selector.info_button_anchor %}
+                            <a 
+                                href="{{module.left_selector.action_button_link.url.href}}{% if module.left_selector.action_button_anchor %}#{{module.left_selector.action_button_anchor}}{% endif %}" " 
+                            class="button button--primary"  target="{% if module.left_selector.action_button_link.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{module.left_selector.action_button_text}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-box-wrapper-module__shadow-box-columnwrap span6 shadow-box-columnwrap--main-selector">
+                <div class="shadow-box__wrapper">
+                    {% if  module.main_selector.image_field.src %}
+                    <div class="shadow-box__image">
+                        <img src="{{ module.main_selector.image_field.src }}" alt="{{module.main_selector.image_field.alt}}" />
+                    </div>
+                    {% endif %}
+                    <div class="shadow-box__header">
+                        <p><strong>
+                            {{ module.main_selector.title_text }}
+                        </strong></p>
+                    </div>
+                    <div class="shadow-box__content">
+                        {{ module.main_selector.content }}
+                    </div>
+                    <div class="shadow-box__buttons-wrapper">
+                        {% if module.main_selector.info_button_link.url.href || module.main_selector.info_button_anchor %}
+                        <a 
+                            href="{{module.main_selector.info_button_link.url.href}}{% if module.main_selector.info_button_anchor %}#{{module.main_selector.info_button_anchor}}{% endif %}" 
+                        class="button info-button" target="{% if module.main_selector.info_button_link.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{module.main_selector.info_button_text}}</a>
+                        {% endif %}
+                            {% if module.main_selector.action_button_link.url.href || module.main_selector.action_button_anchor %}
+                            <a 
+                                href="{{module.main_selector.action_button_link.url.href}}{% if module.main_selector.action_button_anchor %}#{{module.main_selector.action_button_anchor}}{% endif %}" " 
+                            class="button button--primary"  target="{% if module.main_selector.action_button_link.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{module.main_selector.action_button_text}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-box-wrapper-module__shadow-box-columnwrap span3 shadow-box-columnwrap--right-selector">
+                <div class="shadow-box__wrapper">
+                    {% if  module.right_selector.image_field.src %}
+                    <div class="shadow-box__image">
+                        <img src="{{ module.right_selector.image_field.src }}" alt="{{module.right_selector.image_field.alt}}" />
+                    </div>
+                    {% endif %}
+                    <div class="shadow-box__header">
+                        <p><strong>
+                            {{ module.right_selector.title_text }}
+                        </strong></p>
+                    </div>
+                    <div class="shadow-box__content">
+                        {{ module.right_selector.content }}
+                    </div>
+                    <div class="shadow-box__buttons-wrapper">
+                        {% if module.right_selector.info_button_link.url.href || module.right_selector.info_button_anchor %}
+                        <a 
+                            href="{{module.right_selector.info_button_link.url.href}}{% if module.right_selector.info_button_anchor %}#{{module.right_selector.info_button_anchor}}{% endif %}" 
+                        class="button info-button" target="{% if module.right_selector.info_button_link.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{module.right_selector.info_button_text}}</a>
+                        {% endif %}
+                        {% if module.right_selector.action_button_link.url.href || module.right_selector.action_button_anchor %}
+                            <a 
+                                href="{{module.right_selector.action_button_link.url.href}}{% if module.right_selector.action_button_anchor %}#{{module.right_selector.action_button_anchor}}{% endif %}" " 
+                            class="button button--primary"  target="{% if module.right_selector.action_button_link.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{module.right_selector.action_button_text}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% require_js position="footer" %}
+    <script type="text/javascript">
+        const leftSelector = document.querySelector('.shadow-box-columnwrap--left-selector');
+        const rightSelector = document.querySelector('.shadow-box-columnwrap--right-selector');
+        const mainSelector = document.querySelector('.shadow-box-columnwrap--main-selector');
+
+        const leftHeight = leftSelector.offsetHeight;
+        const rightHeight = rightSelector.offsetHeight;
+
+        if (leftHeight < rightHeight) {
+            leftSelector.style.minHeight = rightHeight+"px";
+            mainSelector.style.minHeight = rightHeight*1.1+"px"
+        } else {
+            rightSelector.style.minHeight = leftHeight+"px";
+            mainSelector.style.minHeight = leftHeight*1.1+"px"
+        };
+    </script>
+{% end_require_js %}

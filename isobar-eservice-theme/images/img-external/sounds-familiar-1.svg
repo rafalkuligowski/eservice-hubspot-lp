@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="102.327" height="113.869" viewBox="0 0 102.327 113.869">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1053" data-name="Rectangle 1053" width="99.327" height="110.869" fill="none" stroke="#f74902" stroke-width="3"/>
+    </clipPath>
+  </defs>
+  <g id="Group_10386" data-name="Group 10386" transform="translate(1.5 1.5)">
+    <g id="Group_10393" data-name="Group 10393">
+      <g id="Group_10392" data-name="Group 10392" clip-path="url(#clip-path)">
+        <path id="Path_15045" data-name="Path 15045" d="M18.045,55.836S9.781,49.151,9.781,35.781c0-6.685,3.384-22.74,33.055-26.74C67.628,5.7,101.191,12.432,96.55,42.466,92.418,69.206,67.628,72.549,67.628,72.549" transform="translate(-2.894 -2.313)" fill="none" stroke="#f74902" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_15046" data-name="Path 15046" d="M82.843,97.639l-.13,1.529s.1,4.376-4.036,4.376c-4.156.381-4.328.834-7.5,1.251-3.1.173-9.962,2.156-9.962-7.872V83.467" transform="translate(-18.109 -23.371)" fill="none" stroke="#f74902" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_15047" data-name="Path 15047" d="M55.986,65.218s-.458-3.242.916-3.52,14.289.927,20.015-.463,13.511-18.8,2.977-23.8S45.2,34,43.94,40.857" transform="translate(-13 -9.66)" fill="none" stroke="#f74902" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_15048" data-name="Path 15048" d="M41.777,55.293s2.519,2.223,2.4,3.427-8.359,7.6-10.649,9.17" transform="translate(-9.921 -15.482)" fill="none" stroke="#f74902" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_15049" data-name="Path 15049" d="M72.114,120.035s-7.556.278-8.531,7.086S65.9,139.209,70.9,139.209s13.649-.834,12.8-13.2" transform="translate(-18.761 -33.61)" fill="none" stroke="#f74902" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

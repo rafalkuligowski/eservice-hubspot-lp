@@ -1,0 +1,127 @@
+[ {
+  "id" : "97f47846-f52f-db47-232b-7c400054d11f",
+  "name" : "title_step1",
+  "display_width" : null,
+  "label" : "Title - step1",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Wyślij CV"
+}, {
+  "id" : "fa78e1e0-3701-2111-e2e7-f04f3b140487",
+  "name" : "content_step1",
+  "display_width" : null,
+  "label" : "Content - step1",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies justo erat, a pretium purus ultricies sed. Sed porttitor massa ut eros dictum lacinia. Nullam pellentesque non ante id tincidunt. In varius feugiat aliquet. Nulla aliquam magna condimentum, convallis lorem in, laoreet quam.</p>"
+}, {
+  "id" : "8a4f4b3b-8580-f3c3-6bc7-de76bf6d51bd",
+  "name" : "title_step2",
+  "display_width" : null,
+  "label" : "Title - step2",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Weryfikacja zgłoszeń"
+}, {
+  "id" : "e8202718-897b-cc06-fe34-fb6799e1fd76",
+  "name" : "content_step2",
+  "display_width" : null,
+  "label" : "Content - step2",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies justo erat, a pretium purus ultricies sed. Sed porttitor massa ut eros dictum lacinia. Nullam pellentesque non ante id tincidunt. In varius feugiat aliquet. Nulla aliquam magna condimentum, convallis lorem in, laoreet quam.</p>"
+}, {
+  "id" : "b72c40a8-cd5b-e3ed-bc30-202e7c4e5c5b",
+  "name" : "title_step3",
+  "display_width" : null,
+  "label" : "Title - step3",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Spotkanie"
+}, {
+  "id" : "d0167760-9b3e-3f95-ae4a-f512b4a2714d",
+  "name" : "content_step3",
+  "display_width" : null,
+  "label" : "Content - step3",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies justo erat, a pretium purus ultricies sed. Sed porttitor massa ut eros dictum lacinia. Nullam pellentesque non ante id tincidunt. In varius feugiat aliquet. Nulla aliquam magna condimentum, convallis lorem in, laoreet quam.</p>"
+}, {
+  "id" : "225ca58c-3bab-dbf3-50c3-a52024ee0587",
+  "name" : "title_step4",
+  "display_width" : null,
+  "label" : "Title - step4",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Zaprezentuj się"
+}, {
+  "id" : "6e3d0dfe-de5b-a637-a258-e19cef60f44e",
+  "name" : "content_step4",
+  "display_width" : null,
+  "label" : "Content - step4",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies justo erat, a pretium purus ultricies sed. Sed porttitor massa ut eros dictum lacinia. Nullam pellentesque non ante id tincidunt. In varius feugiat aliquet. Nulla aliquam magna condimentum, convallis lorem in, laoreet quam.</p>"
+}, {
+  "id" : "691ef968-8628-047e-1564-12dbd4ccefac",
+  "name" : "title_step5",
+  "display_width" : null,
+  "label" : "Title - step5",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Czas na decyzję"
+}, {
+  "id" : "e15f75b1-4312-c3fb-16b1-8fd887efca2b",
+  "name" : "content_step5",
+  "display_width" : null,
+  "label" : "Content - step5",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies justo erat, a pretium purus ultricies sed. Sed porttitor massa ut eros dictum lacinia. Nullam pellentesque non ante id tincidunt. In varius feugiat aliquet. Nulla aliquam magna condimentum, convallis lorem in, laoreet quam.</p>"
+}, {
+  "id" : "abe9a684-c5dd-fb2b-7d95-d82f4d11d485",
+  "name" : "title_step6",
+  "display_width" : null,
+  "label" : "Title - step6",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Dołącz do eService"
+}, {
+  "id" : "124af2d2-6cb4-9883-7c68-2cb273bd4d26",
+  "name" : "content_step6",
+  "display_width" : null,
+  "label" : "Content - step6",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies justo erat, a pretium purus ultricies sed. Sed porttitor massa ut eros dictum lacinia. Nullam pellentesque non ante id tincidunt. In varius feugiat aliquet. Nulla aliquam magna condimentum, convallis lorem in, laoreet quam.</p>"
+} ]

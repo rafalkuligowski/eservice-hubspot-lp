@@ -1,0 +1,95 @@
+<style type="text/css">
+    {% if module.hero_image_desktop_height %}
+        .hero__image.hero__image {
+            height: {{module.hero_image_desktop_height}};
+        }
+    {% else %}
+        .hero__image.hero__image {
+            height: 350px;
+        }
+    {% endif %}
+    {% if module.hero_image_desktop_max_height %}
+        .hero__image.hero__image {
+            max-height: {{module.hero_image_desktop_max_height}};
+        }
+    {% else %}
+        .hero__image.hero__image {
+            max-height: 350px;
+        }
+    {% endif %}
+    {% if module.hero_image_desktop_size %}
+        .hero__image.hero__image img {
+             object-fit: {{module.hero_image_desktop_size}};
+        }
+    {% else %}
+        .hero__image.hero__image img {
+            object-fit: cover;
+        }
+    {% endif %}
+    {% if module.has_hidden_after %}
+        .hero__wrapper.hero__wrapper {
+            margin-bottom: 0;
+        }
+        .hero__image.hero__image::after {
+            display: none;
+        }
+    {% endif %}
+    {% if module.has_mobile_image %}
+        @media screen and (max-width: 1023px) {
+            {% if module.hero_image_mobile_height %}
+                .hero__image.hero__image {
+                    height: {{module.hero_image_mobile_height}};
+                    max-height: none;
+                }
+            {% else %}
+                .hero__image.hero__image {
+                    height: 350px;
+                }
+            {% endif %}
+            {% if module.hero_image_mobile_size %}
+                .hero__image.hero__image img {
+                    object-fit: {{module.hero_image_mobile_size}};
+                }
+            {% else %}
+                .hero__image.hero__image img {
+                    object-fit: cover;
+                }
+            {% endif %}
+        }
+    {% endif %}
+</style>
+<div class="hero__wrapper {% if module.button_blue.url.href && module.button_white.url.href %} hero--with-buttons{% endif %}">
+        <div class="hero__image {% if module.button_blue.url.href && module.button_white.url.href %} hero__image-high {% endif %}">
+            <img
+                    {% if module.has_mobile_image %}
+                        class="is-desktop"
+                    {% endif %}
+                    src="{{ module.image_field.src }}"
+                    alt="{{module.image_field.alt}}"
+                    style="{% if module.number_field %}object-position: 50% {{ 50 - module.number_field / 10 / 2 }}%{% endif %}"
+            />
+            {% if module.has_mobile_image %}
+                <img
+                    class="is-mobile"
+                    src="{{ module.mobile_image_field.src }}"
+                    alt="{{module.mobile_image_field.alt}}"
+                    style="{% if module.number_field %}object-position: 50% {{ 50 - module.number_field / 10 / 2 }}%{% endif %}"
+                />
+            {% endif %}
+            {% if module.show_title %}
+                <h1>{{module.title}}</h1>
+                <div class="hero__image-mask">&nbsp;</div>
+            {% endif %}
+        </div>
+
+        {% if module.button_blue.url.href && module.button_white.url.href %}
+        <div class="hero__buttons-wrapper">
+            {% if module.button_blue.url.href %}
+                <a href="{{module.button_blue.url.href}}" class="hero__button-blue" >{{module.button_blue_text}}</a>
+            {% endif %}
+            {% if module.button_white.url.href %}
+                <a href="{{module.button_white.url.href}}" class="hero__button-white" >{{module.button_white_text}}</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>

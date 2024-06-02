@@ -1,0 +1,12 @@
+<div class="ask-for-offer__wrapper" style="background-image: url({{ module.background_image.src }});">
+    <div class="ask-for-offer__wrapper_content">
+      <div class="ask-for-offer__header">
+          <h6>
+            {{ module.text_field }}
+          </h6>
+      </div>
+      <div class="ask-for-offer__cta">
+        <a href="{{module.cta_link.url.href}}{% if module.cta_link_anchor %}#{{module.cta_link_anchor}}{% endif%}" target="{% if module.cta_link.open_in_new_tab %}_blank{% endif %}" class="button hero__button-white" >{{ module.cta_text }}</a>
+      </div>
+    </div>
+</div>

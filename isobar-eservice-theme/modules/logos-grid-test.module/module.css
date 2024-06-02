@@ -1,0 +1,12 @@
+.logos-grid-max-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.logos-grid__margin {
+    margin-bottom: 50px;
+}
+
+.logos-grid__image {
+    object-fit: contain;
+}

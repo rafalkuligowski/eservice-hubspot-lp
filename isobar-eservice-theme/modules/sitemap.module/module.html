@@ -1,0 +1,27 @@
+{% macro link(node, level) %}
+<li>
+	<a href="{{ node.url if node.url else 'javascript:;' }}">{{ node.label }}</a>
+	{% if node.children %}
+	{{ renderNavigation(node) }}
+	{% endif %}
+</li>
+{% endmacro %}
+
+{% macro renderNavigation(menuTree) %}
+{% set level = level + 1 %}
+<ul>
+	{% for node in menuTree.children %}
+	{{ link(node, level) }}
+	{% endfor %}
+</ul>
+
+{% endmacro %}
+
+
+
+<div class="hs_cos_wrapper_type_rich_text">
+{% for item in module.menu_field %}
+{% set menuTree = menu(item) %}
+{{ renderNavigation(menuTree) }}
+{% endfor %}
+</div>

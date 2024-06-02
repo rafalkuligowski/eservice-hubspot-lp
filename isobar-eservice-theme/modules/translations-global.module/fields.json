@@ -1,0 +1,61 @@
+[ {
+  "id" : "c955e706-68ee-0128-a363-ba721709d414",
+  "name" : "read_more",
+  "display_width" : null,
+  "label" : "Czytaj więcej",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Czytaj więcej"
+}, {
+  "id" : "42af2e72-b2cc-c4f2-320e-0f0fcb25f1e6",
+  "name" : "more",
+  "display_width" : null,
+  "label" : "Więcej",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Więcej"
+}, {
+  "id" : "8bdfaa5f-3d6c-d0a6-c2b2-f8180e70aea0",
+  "name" : "search",
+  "display_width" : null,
+  "label" : "Szukaj",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Szukaj"
+}, {
+  "id" : "440fad39-43be-9e0b-7551-98ce5d4d36dc",
+  "name" : "language",
+  "display_width" : null,
+  "label" : "Język",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Język"
+}, {
+  "id" : "blog_title",
+  "name" : "blog_title",
+  "display_width" : null,
+  "label" : "Blog name",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Aktualności"
+} ]

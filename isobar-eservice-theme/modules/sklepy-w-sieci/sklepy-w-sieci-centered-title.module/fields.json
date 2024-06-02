@@ -1,0 +1,34 @@
+[ {
+  "id" : "title",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "header_level",
+  "name" : "header_level",
+  "display_width" : null,
+  "label" : "Header level",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h1", "Header 1" ], [ "h2", "Header 2" ], [ "h3", "Header 3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "h2"
+}, {
+  "id" : "subtitle",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

@@ -1,0 +1,3 @@
+.m-service-card__toggle:before {
+    background: url({{ get_asset_url('/isobar-eservice-theme/images/icons/flip-arrow.svg') }}) no-repeat center/contain;
+}

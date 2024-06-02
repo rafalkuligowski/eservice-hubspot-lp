@@ -1,0 +1,53 @@
+{% if module.form_bg.color %} <style>
+    #heroForm{{name}} .hero-form-module__right-col {
+        background-color: {{module.form_bg.color}};
+    }
+</style> {% endif %}
+
+<div id="heroForm{{name}}" class="hero-form-module__wrapper">
+    <div class="hero-form-module__left-col">
+        {% if module.text_content %} 
+            <div>
+                {{module.text_content}}
+            </div>
+        {% endif %}
+        {% if module.background.src %} 
+            <div class="hero-form-module__image-container">
+                <img src="{{module.background.src}}" alt="{{module.background.alt}}"/>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="hero-form-module__right-col">
+        {% if module.form %}
+            <div id="{{module.form.form_id}}" class="hero-form-module__form-wrapper">
+                {% form
+                    form_to_use='{{module.form.form_id}}',
+                %}
+            </div>
+        {% endif %}
+        <button class="add-field-button link button" type="button" role="button" >{{module.add_field_text}}</button>
+    </div>
+</div>
+
+{% require_js %}
+
+{% end_require_js %}
+<script type="text/javascript">
+    setTimeout(()=>{
+        const buttonStore = document.querySelector('#heroForm{{name}} .add-field-button');
+        buttonStore.remove();
+//         const hideableElements = document.querySelectorAll('#heroForm{{name}} .legal-consent-container, #heroForm{{name}} .hs-submit, #heroForm{{name}} .hs-form-field:not(.hs-firstname):not(.hs-lastname):not(.hs-email)');
+        console.log(hideableElements);  
+        const emailField = document.querySelector('#heroForm{{name}} .hs-email');
+//         for(let i=0; i<hideableElements.length; i++){
+//             hideableElements[i].classList.add('heroFormHide');
+//         }
+        emailField.after(buttonStore);
+//         buttonStore.addEventListener('click',(e)=>{
+//             for(let i=0; i<hideableElements.length; i++){
+//                 hideableElements[i].classList.toggle('heroFormHide');
+//             }
+//         });
+    },500);
+</script>

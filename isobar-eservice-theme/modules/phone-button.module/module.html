@@ -1,0 +1,25 @@
+<!-- module html  -->
+<style>
+    .phone-button-module--{{name}} {
+        width: {{module.module_width}};
+        padding: {{module.module_padding}};
+    }
+
+    {% if module.dif_mobile_alignment %}
+    @media screen and (max-width: 1023px) {
+        .phone-button-module--{{name}} {
+            width: {{module.mobile_module_width}};
+            padding: {{module.mobile_module_padding}};
+        }
+    }
+    {% endif %}
+</style>
+<div class="phone-button-module phone-button-module--{{name}} phone-button-module--{{module.horizontal_alignment}}
+{% if module.dif_mobile_alignment %}
+    phone-button-module--{{module.mobile_horizontal_alignment}}
+{% endif %}
+">
+        <button class="cover button button--primary">{{module.link_text}}</button>
+        <div class="desktop-button button button--secondary phone-button--hidden">{{module.number}}</div>
+        <a class="mobile-button button button--secondary phone-button--hidden" href="tel:{{module.number}}">{{module.number}}</a>
+</div>

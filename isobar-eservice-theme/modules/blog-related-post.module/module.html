@@ -1,0 +1,21 @@
+{% if module.related_post %}
+<div class="related-posts">
+    <h3 class="related-posts__title">{{module.title}}</h3>
+    <div class="related-posts__items">
+        {% for post in module.related_post %}
+        {% set postContent = content_by_id(post) %}
+        <div class="related-posts__item e-tile">
+            <img class="e-tile__image e-tile__image--static" src="{{ postContent.featuredImage }}" alt="{{ postContent.featuredImageAltText || postContent.name }}"/>
+            <div class="e-tile__content">
+                <h3 class="e-tile__title">{{ postContent.name | truncatehtml(60) }}</h3>
+                <p class="e-tile__excerpt">{{ postContent.postListContent | striptags | truncatehtml(150) }}</p>
+                <a href="{{ postContent.absoluteUrl }}" class="e-tile__more button button--secondary">{{ widget_data.translations_global.read_more}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% require_js %}
+
+{% end_require_js %}
+{% endif %}

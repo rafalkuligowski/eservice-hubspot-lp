@@ -1,0 +1,126 @@
+{% set color_blue = theme.global_colors.primary_color.color %}
+
+.accordion-module__wrapper {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-module__item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion-module__label {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: none;
+    padding: 0;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    text-align: left;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.enable-focus-styles .accordion-module__label:focus {
+    outline: mediumblue;
+    outline-width: 2px;
+    outline-style: solid;
+}
+
+.accordion-module__label:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 1px;
+    left: 0;
+    bottom: -1px;
+    transition: width 0.2s ease-in-out;
+}
+
+.opened .accordion-module__label:after {
+    width: 100%;
+}
+
+.accordion-module__label h3 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 16px;
+    width: calc(100% - 48px);
+}
+
+.accordion-module__label__icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+}
+
+.opened .accordion-module__label__icon {
+    transform: rotate(45deg);
+}
+
+.accordion-module__label__icon, .accordion-module__label__icon g, .accordion-module__label__icon path {
+    transition: all 0.2s ease-in-out;
+}
+
+.accordion-module__item:first-child .accordion-module__label {
+    margin-top: 0;
+}
+
+.accordion-module__content {
+    max-height: 0px;
+    transition: max-height 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.additional-paragraph > span > *:first-child {
+    margin-top: 40px;
+}
+
+.additional-paragraph {
+    position: relative;
+}
+
+.accordion-module__item .additional-paragraph *:last-child{
+    margin-bottom: 1.4rem; 
+}
+
+.accordion-module__item .additional-paragraph.prevent-last-margin *:last-child{
+    margin-bottom: 0; 
+}
+
+.accordion-module__item:not(.opened) .additional-paragraph:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255,255,255, 0.4), rgba(255,255,255, 0.9));
+    pointer-events: none;
+}
+
+.accordion-module__content > *:first-child {
+    margin-top: 40px;
+    display: block;
+}
+
+.accordion-module__content.additional-paragraph-present > *:first-child {
+    margin-top: 0px;
+}
+
+.accordion-module__content > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

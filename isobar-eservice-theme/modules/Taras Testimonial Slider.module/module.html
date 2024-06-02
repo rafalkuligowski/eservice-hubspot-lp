@@ -1,0 +1,161 @@
+<div class="testimonial testimonial-{{name}}">
+  <div class="quote-container">
+    <div class="quote-arrows e-slick">
+      <button class="previous slick-prev slick-arrow"></button>
+      <button class="next slick-next slick-arrow"></button>
+    </div>
+    {% for testimonial in module.testimonials %}
+    
+    <div class="quote-box">
+      {% if testimonial.quote %}<blockquote>{{ testimonial.quote }}</blockquote>{% endif %}
+      <div class="client-detail">
+        {% if testimonial.image.src %}
+        <div class="image-wrapper 
+          {%if testimonial.fitvertical %}image-wrapper--fit-vertical{% else %}image-wrapper--fit-horizontal {% endif %}
+          {%if testimonial.mobile.fitvertical %}image-wrapper--fit-vertical--mobile{% else %}image-wrapper--fit-horizontal--mobile {% endif %} 
+          {% if testimonial.has_outline %}image-wrapper--outlined {% endif %}
+        "> 
+          {% if loop.index > 0 %}
+          <img class="testimonial__image testimonial__image--mobile lazyLoadImage" data-lazy-src="{{ testimonial.mobile.image.src }}" alt="{{ testimonial.mobile.image.alt }}">
+          <img class="testimonial__image testimonial__image--desktop lazyLoadImage" data-lazy-src="{{ testimonial.image.src }}" alt="{{ testimonial.image.alt }}">
+          {% else %}
+            <img class="testimonial__image testimonial__image--desktop" src="{{ testimonial.image.src }}" alt="{{ testimonial.image.alt }}">
+            <img class="testimonial__image testimonial__image--mobile" src="{{ testimonial.mobile.image.src }}" alt="{{ testimonial.mobile.image.alt }}">
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if testimonial.quote %}<p class="name">{{ testimonial.fullname }}</p>{% endif %}
+        {% if testimonial.quote %}<p class="info">{{ testimonial.client_info }}</p>{% endif %}
+        <div class="text-content--wrapper">
+          {% if testimonial.text_content.text %} 
+          <div class="text-content--text">
+            {{testimonial.text_content.text}}
+          </div>
+          {% endif %}
+          {% if testimonial.text_content.link_group.link.url.href and testimonial.text_content.link_group.text %} 
+
+            <div class="text-content--link">
+              {% if testimonial.text_content.link_group.is_cta %}
+                <div class="text-content--cta button button--primary">
+                  {{ cta(testimonial.text_content.link_group.cta) }}
+                </div>
+              {% else %}
+              <a href="{{testimonial.text_content.link_group.link.url.href}}" target="{% if testimonial.text_content.link_group.link.open_in_new_tab %}_blank{% endif %}" class="button button--primary">{{testimonial.text_content.link_group.text}}</a>
+              {% endif %}
+            </div>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+    <ul class="quote-dots"></ul>
+  </div>
+	<!-- Hubl values to be used in Javascript -->
+	<input type="hidden" name="testimonial-autoplay" class="testimonial-autoplay" value="{{ module.testimonial_style.general.autoplay }}">
+	<input type="hidden" name="testimonial-speed" class="testimonial-speed" value="{{ module.testimonial_style.general.speed }}">
+
+</div> <!--  close Testimonial -->
+
+
+{% require_css %}
+<style>
+  /* Disable Arrows on condition*/
+  {% if module.testimonial_style.arrow_setting.enable_arrows == 'false' %} 
+    .testimonial-{{name}} .quote-arrows .previous, .testimonial-{{name}} .quote-arrows .next {
+			display: none !important;
+    }
+  {% endif %}
+  /* Disable Dots on condition */
+  {% if module.testimonial_style.dot_setting.enable_dots == 'false' %} 
+    .testimonial-{{name}} ul.quote-dots {
+			display: none !important;
+    }
+  {% endif %}
+  
+  .testimonial-{{name}} {
+    background: rgba({{ module.testimonial_style.general.background.color|convert_rgb }}, {{ module.testimonial_style.general.background.opacity / 100}});
+    color: rgba({{ module.testimonial_style.general.foreground.color|convert_rgb }}, {{ module.testimonial_style.general.foreground.opacity / 100}});
+    padding: {{ module.testimonial_style.general.padding }};
+  }
+  .testimonial-{{name}} .quote-container {
+    float: none;
+    max-width: calc(100% - 100px);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  @media screen and (max-width: 767px) {
+    .testimonial-{{name}} .quote-container {
+      max-width: 100%;
+    }
+  }
+
+  .testimonial-{{name}} .quote-box blockquote {
+    font-size: {{ module.testimonial_style.quote.font_size }}px;
+    {% if module.testimonial_style.quote.italic %} 
+    	font-style: italic;
+    {% endif %};
+  }
+  .testimonial-{{name}} .quote-box blockquote::before{
+    font-size: {{ module.testimonial_style.quote.comma_size }}px;
+  }
+  .testimonial-{{name}} .quote-box blockquote::after{
+    font-size: {{ module.testimonial_style.quote.comma_size }}px;
+  }
+  .testimonial-{{name}} .client-detail .name {
+    font-size: {{ module.testimonial_style.client.name_font_size }}px;
+    {% if module.testimonial_style.client.name_bold %} 
+    	font-weight: bold;
+    {% endif %};
+  }
+  .testimonial-{{name}} .client-detail .info {
+    font-size: {{ module.testimonial_style.client.info_font_size }}px;
+  }
+
+  {% if module.testimonial_style.arrow_setting.enable_arrows == 'true' %} 
+    .testimonial-{{name}} .quote-arrows .previous, .testimonial-{{name}} .quote-arrows .next {
+      /* top: {{ module.testimonial_style.arrow_setting.top }}%; */
+      /* font-size: {{ module.testimonial_style.arrow_setting.size }}px; */
+      font-size: 24px;
+      line-height: 1;
+      /* padding: {{ module.testimonial_style.arrow_setting.padding }}; */
+      padding: 8px 14px;
+      /* background: rgba({{ module.testimonial_style.arrow_setting.background_color.color|convert_rgb }}, {{ module.testimonial_style.arrow_setting.background_color.opacity / 100}}); */
+      background-color: #0140BE;
+      /* color: rgba({{ module.testimonial_style.arrow_setting.color.color|convert_rgb }}, {{ module.testimonial_style.arrow_setting.color.opacity / 100}}); */
+      color: white;
+      text-decoration: none;
+      border-radius: 100%;
+    }
+    /* .testimonial-{{name}} .quote-arrows .previous:hover, .testimonial-{{name}} .quote-arrows .next:hover {
+      background: rgba({{ module.testimonial_style.arrow_setting.hover_background.color|convert_rgb }}, {{ module.testimonial_style.arrow_setting.hover_background.opacity / 100}});
+      color: rgba({{ module.testimonial_style.arrow_setting.hover_color.color|convert_rgb }}, {{ module.testimonial_style.arrow_setting.hover_color.opacity / 100}});
+    } */
+
+   
+  {% endif %}
+  .testimonial-{{name}} ul.quote-dots li {
+    /* background: rgba({{ module.testimonial_style.general.foreground.color|convert_rgb }}, .5); */
+    {% if module.testimonial_style.dot_setting.enable_dots == 'true' %} 
+    /* width: {{ module.testimonial_style.dot_setting.size }}px; */
+    /* height: {{ module.testimonial_style.dot_setting.size }}px; */
+    /* border-radius: {{ module.testimonial_style.dot_setting.round }}%; */
+    {% endif %};
+  }
+  /* .testimonial-{{name}} ul.quote-dots li.active, .testimonial-{{name}} ul.quote-dots li:hover {
+    background: rgba({{ module.testimonial_style.general.foreground.color|convert_rgb }}, .8);
+  } */
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+	$(".testimonial-{{name}}").tarasTestimonial({
+    quoteEl			 : ".quote-box",
+    autoplay     : $(".testimonial-{{name}} .testimonial-autoplay").val(),
+    speed        : $(".testimonial-{{name}} .testimonial-speed").val(), 
+  });
+</script>
+{% end_require_js %}

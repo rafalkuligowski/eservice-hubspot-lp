@@ -1,0 +1,18 @@
+<style>
+    .colored-text--{{name}} {
+        background-color: {{module.main_color.color}};
+    }
+    
+    .colored-text__box--framed {
+        background-color: {{module.box_color.color}};
+    }
+</style>
+
+<div class="colored-text colored-text--{{name}}">
+    <h2 class="colored-text__title">{{module.section_title}}</h2>
+    {% for box in module.boxes %}
+        <div class="colored-text__box {% if box.framed %}colored-text__box--framed{% endif %}">
+            {{box.text}}
+        </div>
+    {% endfor %}
+</div>

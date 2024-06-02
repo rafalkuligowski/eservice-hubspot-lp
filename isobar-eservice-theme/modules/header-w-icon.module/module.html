@@ -1,0 +1,7 @@
+<!-- module html  -->
+<div class="header-w-icon header-w-icon--{% if module.icon_above %}{{module.alignment}}{% endif %}">
+    <div class="header-w-icon__wrapper header-w-icon__wrapper--{% if module.icon_above %}icon-above header-w-icon__wrapper--icon-above--{{module.alignment}}{% else %}icon-to-left header-w-icon__wrapper--icon-to-left--{{module.alignment}}{% endif %}">
+        <img src="{{module.header_image.src}}" alt="{{module.header_image.alt}}" class="header-w-icon__image" />
+        <{{module.header_level}} class="header-w-icon__text header-w-icon__text--padded-{% if module.icon_above %}top{% else %}left{% endif %}">{{module.header_text}}</{{module.header_level}}>
+    </div>
+</div>

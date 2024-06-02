@@ -1,0 +1,83 @@
+[ {
+  "id" : "184ad325-8366-19af-39bb-4ebd0db8d295",
+  "name" : "sublinks",
+  "display_width" : null,
+  "label" : "Sublinks",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "2cd4dbdd-3cb2-8d80-2c21-b07301e472a4",
+    "name" : "sublink",
+    "display_width" : null,
+    "label" : "Menu link",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "6a88d546-a4e2-516d-c29c-8c5ae0d67347",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "dfc3513e-b7df-03e9-f0c5-9e5d68191535",
+      "name" : "sublink_link",
+      "display_width" : null,
+      "label" : "Sublink link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "6a88d546-a4e2-516d-c29c-8c5ae0d67347",
+      "name" : "sublink_link_text",
+      "display_width" : null,
+      "label" : "Sublink link text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "sublink_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "sublink" : {
+      "sublink_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+} ]

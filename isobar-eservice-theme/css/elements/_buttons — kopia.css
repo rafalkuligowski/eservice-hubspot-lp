@@ -1,0 +1,93 @@
+a, .button, input[type="submit"] {
+  border-radius: {{theme.buttons.border_radius}}px;
+  padding: 0;
+  color: {{theme.global_colors.primary_color.color}};
+  cursor: pointer;
+  display: inline-block;
+  font-size: {{theme.typography.button.size}}px;
+  font-weight: 600;
+  line-height: 1.15;
+  height: auto;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  transition: all 0.15s linear;
+  white-space: normal;
+  width: auto;
+  word-break: break-word;
+}
+
+a, .button:hover,.button:focus {
+  text-decoration: underline;
+}
+
+
+.button:disabled input[type="submit"]:disabled, .button.disabled {
+  color: {{theme.global_colors.text_elements_color.color}};
+  border: 0;
+  background: none;
+  text-decoration: none;
+}
+
+.button--primary,
+.button--secondary,
+input[type="submit"] {
+  text-decoration: none;
+  padding: {{theme.buttons.vertical_padding}}px {{theme.buttons.horizontal_padding}}px;
+}
+
+.button--primary, input[type="submit"] {
+  color: {{theme.buttons.primary.text_color.color}};
+  background-color: {{theme.buttons.primary.background_color.color}};
+  border: {{theme.buttons.border_width}}px solid {{theme.buttons.primary.border_color.color}};
+}
+
+.button--primary:hover, .button--primary:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  color: {{theme.buttons.primary.hover_text_color.color}};
+  background-color: {{theme.buttons.primary.hover_background_color.color}};
+  text-decoration: none;
+}
+
+.button--primary:disabled, input[type="submit"]:disabled, input[type="submit"].disabled {
+  color: {{theme.buttons.primary.disabled_text_color.color}};
+  background-color: {{theme.buttons.primary.disabled_background_color.color}};
+  text-decoration: none;
+}
+
+.button-secondary {
+  padding: {{theme.buttons.vertical_padding}}px {{theme.buttons.horizontal_padding}}px;
+}
+
+.button--secondary {
+  color: {{theme.buttons.secondary.text_color.color}};
+  background-color: {{theme.buttons.secondary.background_color.color}};
+  border: {{theme.buttons.border_width}}px solid {{theme.buttons.secondary.border_color.color}};
+}
+
+.button--secondary:hover, .button--secondary:focus {
+  color: {{theme.buttons.secondary.hover_text_color.color}};
+  background-color: {{theme.buttons.secondary.hover_background_color.color}};
+  text-decoration: none;
+}
+
+.button--secondary:disabled {
+  color: {{theme.buttons.secondary.disabled_text_color.color}};
+  background-color: {{theme.buttons.secondary.disabled_background_color.color}};
+  text-decoration: none;
+}
+
+.button--header-link {
+  color: {{theme.global_fonts.primary_font.color}};
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button--header-link:hover, .button--header-link:focus {
+  text-decoration: none;
+}
+
+@media screen and (max-width: {{theme.grid.desktop_min - 1}}) {
+  .button--header-link {
+    font-size: 20px;
+  }
+}

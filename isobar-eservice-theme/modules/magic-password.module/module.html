@@ -1,0 +1,13 @@
+<!-- module html  -->
+<div class="password-container">
+    <h4>Hi! Great seeing you again!</h4>
+    <p>To get access, please enter the magic password here.</p>
+    <div class="password-container-show">
+        <input type="password" id="password-coca-cola">
+        <span class="show-password-icon open"><img src="{{ get_asset_url('/isobar-eservice-theme/images/coca-cola/eye-ico.svg')}}" /></span>
+        <span class="show-password-icon closed"><img src="{{ get_asset_url('/isobar-eservice-theme/images/coca-cola/close-eye-ico.svg')}}" /></span>
+    </div>
+    <div id="error">You've entered wrong password!</div>
+    <button type="button" id="button-submit-password">Login</button>
+</div>  
+<div class="loader">Loading&#8230;</div>

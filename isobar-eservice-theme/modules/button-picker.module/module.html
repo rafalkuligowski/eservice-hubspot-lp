@@ -1,0 +1,37 @@
+<!-- module html  -->
+<style>
+    .button-picker-module--{{name}} {
+        width: {{module.module_width}};
+        padding: {{module.module_padding}};
+    }
+
+    {% if module.dif_mobile_alignment %}
+    @media screen and (max-width: 1023px) {
+        .button-picker-module--{{name}} {
+            width: {{module.mobile_module_width}};
+            padding: {{module.mobile_module_padding}};
+        }
+    }
+    {% endif %}
+
+</style>
+<div class="button-picker-module button-picker-module--{{name}} button-picker-module--{{module.horizontal_alignment}} 
+{% if module.dif_mobile_alignment %}
+    button-picker-module--{{module.mobile_horizontal_alignment}}
+{% endif %}
+">
+    {% if module.is_cta %}
+        <div class="button-picker__cta-wrapper">
+            <span class="text-to-switch button button--{{module.button_type}}">{{module.link_text}}</span>
+            {{ cta(module.cta) }}
+        </div>
+    {% elif module.is_anchor %}
+        {% if module.is_anchor and (module.anchor_field and module.link_text) %}
+            <a class="button button--{{module.button_type}}" href="#{{module.anchor_field}}">{{module.link_text}}</a>
+        {% endif %}
+    {% else %}
+        {% if module.link_field.url.href and module.link_text %}
+            <a class="button button--{{module.button_type}}" href="{{module.link_field.url.href}}" target="{% if module.link_field.open_in_new_tab %}_BLANK{%else%}_self{% endif %}">{{module.link_text}}</a>
+        {% endif %}
+    {% endif %}
+</div>

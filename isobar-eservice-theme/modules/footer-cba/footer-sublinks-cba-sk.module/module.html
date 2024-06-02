@@ -1,0 +1,23 @@
+<ul>
+    {% for item in module.sublinks.sublink %}
+    <li>
+        {% set href = item.sublink_link.url.href %}
+        {% if item.sublink_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+        {% endif %}
+        {% set rel = [] %}
+        {% if item.sublink_link.no_follow %}
+            {% do rel.append("nofollow") %}
+        {% endif %}
+        {% if item.sublink_link.open_in_new_tab %}
+            {% do rel.append("noopener") %}
+        {% endif %}
+        <a href="{{ href }}"
+            {% if item.sublink_link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+            >
+            {% inline_text field="sublink_link_text" value="{{ item.sublink_link_text }}" %}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,20 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: cba search results - search results
+  screenshotPath: ../../images/template-previews/search-results.png
+-->
+{% extends './layouts/base-cba.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  <section class="content-wrapper">
+    <div class="systems-page">
+      <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
+      {% module 'search_results'
+        path='@hubspot/search_results'
+      %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

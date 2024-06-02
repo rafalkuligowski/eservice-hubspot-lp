@@ -1,0 +1,20 @@
+[ {
+  "id" : "is_alert",
+  "name" : "is_alert",
+  "display_width" : null,
+  "label" : "Is alert active?",
+  "required" : false,
+  "locked" : true,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "text",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Alert text",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "default" : ""
+} ]

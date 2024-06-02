@@ -1,0 +1,18 @@
+<!--
+  templateType: global_partial
+  label: Lang switcher
+-->
+{% set lang_ico_path = "isobar-eservice-theme/images/icons/countries/" ~ content.language  ~ ".svg" %}
+{% if content.translated_content|length %}
+<div class="language-switcher">
+    <!-- <span class="language-switcher__text">{{ widget_data.translations_global.language }}:</span> -->
+    <img class="language-switcher__flag" src="{{get_asset_url(lang_ico_path)}}" alt="country flag ico {{content.language}}"/>
+    <span class="language-switcher__code">{{country_code|upper }}</span>
+    <div class="language-switcher__select">
+        {% module 'language-switcher' path='@hubspot/language_switcher',
+        label='Language switcher',
+        display_mode='localized'
+        %}
+    </div>
+</div>
+{% endif %}

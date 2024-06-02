@@ -1,0 +1,139 @@
+<style>
+    .contact-switcher__item.arrowed:first-child:after {
+        background-image: url('{{module.top_boxes.box_1_arrow_image.src}}')
+    }
+
+    .contact-switcher__item.arrowed:last-child:after {
+        background-image: url('{{module.top_boxes.box_2_arrow_image.src}}')
+    }
+</style>
+{% set services = hubdb_table_rows( module.tables.services_table ) %}
+<div class="contact-page" data-services-hubdb="{{ services}}">
+    <div class="contact-switcher">
+        <div class="contact-switcher__item arrowed">
+            <div class="c-switch c-switch--active" id="client">
+                <h3 class="c-switch__title">{{ module.top_boxes.box_2_text }}
+                    <img class="c-switch__title__image" src="{{module.top_boxes.box_2_image.src}}"
+                        alt="{{module.top_boxes.box_2_image.alt}}">
+                </h3>
+            </div>
+        </div>
+        <div class="contact-switcher__item arrowed">
+            <div class="c-switch" id="cooperation-module">
+                <h3 class="c-switch__title">{{ module.top_boxes.box_1_text }}
+                    <img class="c-switch__title__image" src="{{module.top_boxes.box_1_image.src}}"
+                        alt="{{module.top_boxes.box_1_image.alt}}">
+                </h3>
+            </div>
+        </div>
+    </div>
+    <a href="#clientsx"></a>
+
+    <div class="contact-tabs">
+        <div class="contact-tab  cooperation-tab" data-id="cooperation-module">
+            <div class="contact-static">
+                {% form
+                form_to_use="{{ module.form_field.form_id }}"
+                response_response_type="{{ module.form_field.response_type }}"
+                response_message="{{ module.form_field.message }}"
+                response_redirect_id="{{ module.form_field.redirect_id }}"
+                response_redirect_url="{{module.form_field.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+                %}
+            </div>
+        </div>
+
+        {% for item in module.subjects %}
+        <div class="contact-tab" data-id="{{ item.form_field.form_id }}">
+            {% if item.accordions %}
+            <div class="contact-accordion accordion-module__wrapper">
+                {% for accordion in item.accordions %}
+                <div class="accordion-module__item">
+                    <button class="accordion-module__label">
+                        <h3>{{ accordion.question }}</h3>
+                        <svg class="accordion-module__label__icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <defs>
+                                <style>
+                                    .a {
+                                        fill: #fff
+                                    }
+
+                                    .a,
+                                    .b {
+                                        stroke: #111
+                                    }
+
+                                    .b,
+                                    .d {
+                                        fill: none
+                                    }
+
+                                    .b {
+                                        stroke-linecap: round
+                                    }
+
+                                    .c {
+                                        stroke: none
+                                    }
+                                </style>
+                            </defs>
+                            <g transform="translate(-1448 -13885)">
+                                <g class="a" transform="translate(1448 13885)">
+                                    <circle class="c" cx="12" cy="12" r="12" />
+                                    <circle class="d" cx="12" cy="12" r="11.5" />
+                                </g>
+                                <path class="b" d="M-20400-10385.153v8" transform="translate(21860 24278.15)" />
+                                <path class="b" d="M0,0V8" transform="translate(1464.002 13897) rotate(90)" />
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="accordion-module__content">
+                        {% rich_text field="test" value="{{ accordion.answer }}" %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="contact-static">
+                {% if item.accordions %}
+                <p class="contact-static__title">{{ module.static.static_data_title }}</p>
+                {% endif %}
+                {% for item in module.static.static_boxes %}
+                <div class="contact-static-box">
+                    <figure class="contact-static-box__image">
+                        {% if item.static_box_image.src %}
+                        <img src="{{ item.static_box_image.src }}" alt="{{ item.static_box_image.alt }}"
+                            class="contact-static-box__image-el">
+                        {% endif %}
+                    </figure>
+                    <div class="contact-static-box__content">
+                        {% rich_text field="static_box_content" value="{{ item.static_box_content }}" %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div data-custom-form="{{ item.form_field.form_id }}"></div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="contact-tabs">
+        <div class="contact-tab client-tab" data-id="client">
+            <div class="contact-static">
+                {% form
+                form_to_use="{{ module.form_field_2.form_id }}"
+                response_response_type="{{ module.form_field_2.response_type }}"
+                response_message="{{ module.form_field_2.message }}"
+                response_redirect_id="{{ module.form_field_2.redirect_id }}"
+                response_redirect_url="{{module.form_field_2.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form_field_2.gotowebinar_webinar_key }}"
+                %}
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

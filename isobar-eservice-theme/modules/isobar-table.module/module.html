@@ -1,0 +1,23 @@
+<!-- module html  -->
+{% if module.table_title is truthy %}
+    <h3 class="{{module.title_alignment}}">{{module.table_title}}</h3>
+{% endif %}
+
+<div class="isobar-table__wrapper" style="justify-content: {{module.alignment}};">
+    <table class="isobar-table span{{module.table_width}} {% if module.alignment == 'stretch' %} stretched {% endif %}">
+    {% for row in module.table_rows %}
+        {% set default_width = 100 %}
+        <tr {% if row.first_bold == true %} class="first-bolded" {% endif %}>
+        {% for cell in row.row_item %}
+            {% if row.row_type == 'title' %}
+            <th class="table-title {{cell.cell_alignment}}" {% if loop.index == row.colspan_span_index %} colspan="{{cell.span_ammount}}" {% endif %}>{{cell.content}}</th>
+            {% elif row.row_type == 'section' %}
+                <td class="{{cell.cell_alignment}} section" colspan="{{cell.span_ammount}}">{{cell.content}}</td>
+            {% else %}
+            <td class="{{cell.cell_alignment}}" {% if loop.index == row.colspan_span_index %} colspan="{{cell.span_ammount}}" {% endif %} >{{cell.content}}</td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</div>

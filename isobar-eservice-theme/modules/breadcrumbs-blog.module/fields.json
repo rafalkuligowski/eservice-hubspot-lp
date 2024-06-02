@@ -1,0 +1,12 @@
+[ {
+  "id" : "91b55e5d-4d33-9517-ca24-ad214f7cd4a5",
+  "name" : "homepage_title",
+  "display_width" : null,
+  "label" : "Homepage title",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

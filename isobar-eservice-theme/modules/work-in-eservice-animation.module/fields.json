@@ -1,0 +1,106 @@
+[ {
+  "id" : "254b4326-a739-27bb-06e8-a08a0d087b16",
+  "name" : "title_wplyw",
+  "display_width" : null,
+  "label" : "Title - Wplyw",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Mamy wpływ"
+}, {
+  "id" : "bf059902-d928-f219-8a25-5925a8eed747",
+  "name" : "title_perspektywy",
+  "display_width" : null,
+  "label" : "Title - Perspektywy",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Mamy perspektywy"
+}, {
+  "id" : "5cfe8861-1998-7fe4-33da-97dbfbf0258f",
+  "name" : "title_satysfakcja",
+  "display_width" : null,
+  "label" : "Title - Satysfakcja",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Mamy satysfakcję"
+}, {
+  "id" : "2cc0cf0e-3273-2efa-b135-75daf28d983d",
+  "name" : "title_kontakty",
+  "display_width" : null,
+  "label" : "Title - Kontakty",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Mamy globalne kontakty"
+}, {
+  "id" : "0e0aa393-0794-f8c5-2ff6-be670157642b",
+  "name" : "title_zespol",
+  "display_width" : null,
+  "label" : "Title - Zespol",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Mamy świetny zespół"
+}, {
+  "id" : "49372be4-68eb-71de-987c-87b0b974be32",
+  "name" : "content_wplyw",
+  "display_width" : null,
+  "label" : "Content - Wplyw",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Działamy w dynamicznym środowisku nowych technologii i finansów.<br>Projektujemy i wdrażamy produkty ułatwiające codzienność milionom ludzi.</p>"
+}, {
+  "id" : "a02b8710-5305-c752-7929-db4bed9f820a",
+  "name" : "content_perspektywy",
+  "display_width" : null,
+  "label" : "Content - Perspektywy",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Praca w eService to nieustanne możliwości rozwoju i stabilne zatrudnienie.</p>"
+}, {
+  "id" : "455265fc-093e-af68-4d03-6f6e2e21dbf6",
+  "name" : "content_satysfakcja",
+  "display_width" : null,
+  "label" : "Content - Satysfakcja",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Nie boimy się nowych wyzwań,<br>bo traktujemy je jako okazję do zawodowego rozwoju.</p>"
+}, {
+  "id" : "93211a8b-0153-b14f-bc88-881ed267f937",
+  "name" : "content_kontakty",
+  "display_width" : null,
+  "label" : "Content - Kontakty",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Pracujemy w międzynarodowym środowisku.<br>Możemy nieustannie czerpać z doświadczeń naszych pracowników z innych krajów.</p>"
+}, {
+  "id" : "e3a060ea-9912-c261-99a1-2c9e194689db",
+  "name" : "content_zespol",
+  "display_width" : null,
+  "label" : "Content - Zespol",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Nasz zespół tworzą fascynujący ludzie z pasją.<br>Inspirujemy się i uczymy nawzajem.<br>Lubimy ze sobą przebywać i razem podejmować wyzwania - zarówno w pracy, jak i \"po godzinach\".</p>"
+} ]
