@@ -1,0 +1,357 @@
+.work-in-eservice-animation__wrapper {
+  display: block;
+  position: relative;
+  text-align: center;
+  min-height: 657px;
+  width: 100%;
+  max-width: 932px;
+  margin: 0 auto 8px;
+  box-sizing: border-box;
+}
+
+.work-in-eservice-animation__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.work-in-eservice-animation__bg svg {
+  height: 174px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 36%;
+  overflow: visible;
+}
+.work-in-eservice-animation__box {
+  position: absolute;
+  text-align: center;
+}
+
+.work-in-eservice-animation__box1 {
+  width: 300px;
+  left: 34px;
+  top: 100px;
+}
+.work-in-eservice-animation__box2 {
+  width: 320px;
+  left: 305px;
+  top: 56px;
+}
+
+.work-in-eservice-animation__box3 {
+  width: 269px;
+  left: 610px;
+  top: 99px;
+}
+
+.work-in-eservice-animation__box4 {
+  width: 340px;
+  left: 530px;
+  top: 395px;
+}
+
+.work-in-eservice-animation__box5 {
+  width: 386px;
+  left: 54px;
+  top: 395px;
+}
+
+.work-in-eservice-animation__image {
+  position: relative;
+  width: 150px;
+  height: 85px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+
+  /* background: green; */
+}
+
+.work-in-eservice-animation__image img,
+.work-in-eservice-animation__image svg {
+  height: auto;
+  width: 100%;
+  width: 75px;
+}
+
+/* .work-in-eservice-animation__box1 svg {
+  margin-top: -44px;
+}*/
+.work-in-eservice-animation__box2 svg {
+  margin-top: -15px;
+  width: 58%;
+} 
+.work-in-eservice-animation__box3 svg {
+  /* margin-top: -7px; */
+  width: 79%;
+}
+.work-in-eservice-animation__box4 svg {
+  margin-top: -6px;
+  height: 95%;
+  width: 100%;
+}
+.work-in-eservice-animation__box5 svg {
+  margin-top: -13px;
+  width: 77%;
+}
+
+.work-in-eservice-animation__header {
+  padding-bottom: 6px;
+  border: none;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+.work-in-eservice-animation__header:focus {outline:0;}
+
+.work-in-eservice-animation__header h5 {
+  color: #1751c3;
+  margin: 0;
+  font-size: 19px;
+  padding-right: 30px;
+}
+
+.work-in-eservice-animation p {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.work-in-eservice-animation__content {
+  /* height: 0;
+  opacity: 0; */
+  max-height: 0px;
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.opened .work-in-eservice-animation__content {
+  max-height: 200px;
+}
+
+.work-in-eservice-animation__content p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.work-in-eservice-animation__content p:last-child {
+  margin-bottom: 0;
+}
+
+
+.chevron {
+  position: absolute;
+  width: 20px;
+  top: 0;
+  right: 16px;
+}
+
+.leftBar,
+.rightBar {
+	transition-duration: 0.225s;
+    transition-property: transform;
+}
+
+.leftBar {
+  /* transform-origin: 33.4% 50%; */
+  transform-origin: 61.4% 63%;
+  transform: rotate(90deg);
+}
+
+.rightBar{
+  /* transform-origin: 67% 50%; */
+  transform-origin: 89% 64%;
+  transform: rotate(-90deg);
+}
+
+.rightBar {
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.chevron svg {
+  margin-top: 0px;
+  width: 100%;
+  height: auto;
+}
+
+.chevron polygon {
+  transform: scale(0.3);
+  fill:#0F5BAC;
+}
+
+.opened .leftBar{
+   transform: rotate(0deg);
+}
+
+.opened .rightBar{
+   transform: rotate(0deg);
+}
+
+
+#_105553396400608 .fil1,
+#_105553396400609 .fil1 {
+fill:#0F5BAC;
+fill-rule:nonzero
+}
+#_105553396400608 .fil0,
+#_105553396400609 .fil0 {
+fill:#D7E4F8;
+fill-rule:nonzero
+}
+
+#_105553330731008 .fil1,
+#_105553330731008 .fil1 {fill:#D7E4F8;fill-rule:nonzero}
+
+#_105553330731008 .fil0,
+#_105553330731008 .fil0 {fill:#0F5BAC;fill-rule:nonzero}
+
+svg {
+overflow: visible;
+}
+
+.animation {
+-webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  transform-origin: center;
+}
+
+
+.float {
+-webkit-animation-name: float;
+  animation-name: float;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+}
+
+@keyframes float {
+  20%, 100% {
+  transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+
+.float2 {
+-webkit-animation-name: float2;
+  animation-name: float2;
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+}
+@keyframes float2 {
+    20%,80% {
+        transform: translatey(0px) rotate(0deg);
+    }
+    50% {
+        transform: translatey(0) rotate(3deg);
+    }
+}
+
+.float3 {
+-webkit-animation-name: float3;
+  animation-name: float3;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+}
+@keyframes float3 {
+    0% {
+        transform: translatey(0px) rotate(1deg);
+    }
+    50% {
+        transform: translatey(0) rotate(-5deg);
+    }
+    100% {
+        transform: translatey(0px) rotate(1deg);
+    }
+}
+
+.float4 {
+-webkit-animation-name: float4;
+  animation-name: float4;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+}
+@keyframes float4 {
+    30%, 70% {
+        transform: translatey(0px) rotate(0deg);
+    }
+    50% {
+        transform: translatey(-10px) rotate(12deg);
+    }
+}
+
+.delay1 {
+animation-delay: 1s;
+}
+.delay2 {
+animation-delay: 3s;
+}
+.delay3 {
+animation-delay: 0.1s;
+}
+.delay4 {
+animation-delay: 0.2s;
+}
+
+.blink {
+-webkit-animation-name: blink;
+  animation-name: blink;
+  -webkit-animation-duration: 9s;
+  animation-duration: 9s;
+}
+
+@keyframes blink {
+  49%, 51% {
+  opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+}
+
+
+.zoom {
+-webkit-animation-name: zoom;
+  animation-name: zoom;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
+}
+
+@keyframes zoom {
+  45%, 55% {
+  transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+
+@media (max-width: 950px) {
+  .work-in-eservice-animation__bg {
+    display: none;
+  }
+  .work-in-eservice-animation__box {
+    position: static;
+    margin: 35px auto 60px;
+  }
+  .work-in-eservice-animation__header {
+    cursor: default;
+  }  
+  .work-in-eservice-animation__content {
+    max-height: 1000px;
+  }
+  .work-in-eservice-animation__header h5 {
+    padding-right: 0px;
+  }
+  .chevron {
+    display: none;
+  }
+}

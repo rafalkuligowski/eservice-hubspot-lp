@@ -1,0 +1,7 @@
+/* body #hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom {
+  position: fixed;
+} */
+
+body div#hs-eu-cookie-confirmation#hs-eu-cookie-confirmation {
+  z-index: 9999999999 !important;
+}

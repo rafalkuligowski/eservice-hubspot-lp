@@ -1,0 +1,62 @@
+.e-slick {
+    margin: 0 -7.5px;
+}
+.e-slick .slick-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 0;
+    border: 0;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.e-slick .slick-slide {
+    margin: 0 7.5px;
+}
+.e-slick .slick-list {
+    flex-basis: 100%;
+}
+
+.e-slick .slick-arrow.slick-disabled {
+    opacity: 0.5;
+}
+
+.e-slick .slick-prev {
+    left: -15px;
+    transform: translate(-100%, -50%);
+    background: url({{ get_asset_url('/isobar-eservice-theme/images/icons/chevron-left.svg') }}) no-repeat center/contain;
+}
+
+.e-slick .slick-next {
+    right: -15px;
+    transform: translate(100%, -50%);
+    background: url({{ get_asset_url('/isobar-eservice-theme/images/icons/chevron-right.svg') }}) no-repeat center/contain;
+}
+@media(max-width: 1500px) {
+    .e-slick {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+}
+@media(max-width: 1200px) {
+    .e-slick .slick-prev {
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    .e-slick .slick-next {
+         right: 0;
+         transform: translate(50%, -50%);
+    }
+    .e-slick {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .e-slick .slick-arrow {
+        width: 35px;
+        height: 35px;
+    }
+}

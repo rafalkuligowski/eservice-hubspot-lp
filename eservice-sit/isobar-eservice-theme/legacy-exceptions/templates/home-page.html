@@ -1,0 +1,117 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing page
+  screenshotPath: ../images/template-previews/landing-page.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block header %}
+  {% global_partial path='./partials/header-landing-page.html' %}
+{% endblock header %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area 'dnd_area' class='body-container body-container--landing-page', label='Main section' %}
+
+    {# Banner Section #}
+    {% dnd_section
+      padding={
+        'top': 0,
+        'bottom': 0
+      },
+      ,
+      background_image={
+        'backgroundPosition': 'MIDDLE_CENTER',
+        'backgroundSize': 'cover',
+        'imageUrl': get_asset_url('../images/landing-page-banner.jpg')
+      },
+    %}
+      {% dnd_column %}
+        {% dnd_row
+          padding={
+            'top': 40,
+            'right': 20,
+            'bottom': 40,
+            'left': 20
+          },
+          vertical_alignment='MIDDLE'
+        %}
+          {% dnd_column
+            offset=0,
+            width=4
+          %}
+            {% dnd_row %}
+              {% dnd_module path='@hubspot/linked_image',
+                img={
+                'src': get_asset_url('../images/offer.png'),
+                'alt': 'Woman smiling and holding her cell phone',
+                'size_type': 'auto'
+                }
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+          {% dnd_column
+            offset=4,
+            width=8
+          %}
+            {% dnd_row
+              vertical_alignment='MIDDLE'
+            %}
+              {% dnd_module path='@hubspot/rich_text' %}
+                {% module_attribute 'html' %}
+                  <p>eBook</p>
+                  <h2>5 Ways to Build a Website on the Cheap</h2>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End Banner Section #}
+
+    {# Two Column With Form Section #}
+    {% dnd_section %}
+      {% dnd_column
+        offset=0,
+        width=6
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text' %}
+          {% module_attribute 'html' %}
+            <h3>What’s Inside?</h3>
+            <p>Morbi et dolor est. Donec at dolor vehicula, molestie erat non, rutrum tellus. Vestibulum in eros non augue convallis pulvinar. Aliquam erat volutpat. Cras interdum felis at sem pharetra, sed convallis elit auctor. Nulla semper ut ante eu dapibus. Mauris dui orci, pulvinar sit amet ligula vel.</p>
+            <p>Cras interdum felis at sem pharetra, sed convallis elit auctor. Nulla semper ut ante eu dapibus. Mauris dui orci, pulvinar sit amet ligula vel.</p>
+            <ul>
+              <li>Far far away, behind the word mountains, far from the countries Vokalia</li>
+              <li>Far far away, behind the word mountains, far from the countries Vokalia</li>
+              <li>Far far away, behind the word mountains, far from the countries Vokalia</li>
+            </ul>
+          {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=6,
+        width=6
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path='@hubspot/form'
+            title='Send me the ebook!'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End Two Column With Form Section #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
+
+{% block footer %}
+  {% global_partial path='./partials/footer-landing-page.html' %}
+{% endblock footer %}

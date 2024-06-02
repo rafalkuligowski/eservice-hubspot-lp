@@ -1,0 +1,46 @@
+
+<div class="flip-cards__wrapper">
+    {% for card in module.flip_cards %}
+    <div class="m-service-card" tabindex="0">
+        <div class="m-service-card__inner">
+            <div class="m-service-card__front">
+                <button class="m-service-card__toggle"></button>
+                <div class="m-service-card__image"
+                     style="background-image: url({{card.image.src}});"></div>
+                <div class="m-service-card__content">
+                    <h4 class="m-service-card__title">{{ card.title }}</h4>
+                    <div class="m-service-card__text">
+                        {{ card.short_description }}
+                    </div>
+                    <div class="m-service-card__buttons">
+                        {% if card.custom_page.url.href %}
+                        <a href="{{ card.custom_page.url.href }}" class="button js-service-link" {% if card.custom_page.open_in_new_tab %} target="_BLANK"{% endif %}>{{ widget_data.translations_global.read_more}}</a>
+                        {% endif %}
+                        {% if card.contact_page.url.href %}
+                        <a href="{{ card.contact_page.url.href }}" class="button button--primary m-service-card__button-contact" {% if card.contact_page.open_in_new_tab %} target="_BLANK"{% endif %}>{{card.contact_page_text}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="m-service-card__back">
+                <button class="m-service-card__toggle"></button>
+                <div class="m-service-card__content m-service-card__content--back">
+                    <h4 class="m-service-card__title">{{ card.title }}</h4>
+                    <div class="m-service-card__text">
+                        {{ card.description }}
+                    </div>
+                    <div class="m-service-card__buttons">
+                        {% if card.custom_page.url.href %}
+                        <a href="{{ card.custom_page.url.href }}" class="button js-service-link" {% if card.custom_page.open_in_new_tab %} target="_BLANK"{% endif %}>{{ widget_data.translations_global.read_more}}</a>
+                        {% endif %}
+                        {% if card.contact_page.url.href %}
+                        <a href="{{ card.contact_page.url.href }}" class="button button--primary m-service-card__button-contact" {% if card.contact_page.open_in_new_tab %} target="_BLANK"{% endif %}>{{card.contact_page_text}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>

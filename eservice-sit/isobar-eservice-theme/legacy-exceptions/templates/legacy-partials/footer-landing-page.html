@@ -1,0 +1,18 @@
+<!--
+  templateType: global_partial
+  label: Landing Page Footer
+-->
+<footer class="footer footer--landing-page">
+  <div class="footer__container">
+
+      {# Copyright #}
+      {% module_block module 'footer_copyright' path='@hubspot/rich_text', label='Copyright' %}
+        {% module_attribute 'html' %}
+          <div class="footer__content">
+            <p>Copyright © {{ year }} {{ site_settings.company_name }}. All Rights Reserved.</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_module_block %}
+
+  </div>
+</footer>

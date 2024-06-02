@@ -1,0 +1,63 @@
+[ {
+  "id" : "7cea1101-48c1-6a8a-36f2-57c73f692904",
+  "name" : "text_field",
+  "display_width" : null,
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Chcesz wiedzieć więcej? Skontaktuj się z naszymi doradcami przez telefon, chat lub formularz. Chętnie odpowiemy na wszystkie Twoje pytania."
+}, {
+  "id" : "2278f5d9-f105-742c-ea9c-c1e32a2c73cd",
+  "name" : "background_image",
+  "display_width" : null,
+  "label" : "Background image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent00.net/hubfs/8443659/bg.jpg",
+    "alt" : "bg",
+    "loading" : "disabled",
+    "width" : 1858,
+    "height" : 688,
+    "max_width" : 1858,
+    "max_height" : 688
+  }
+}, {
+  "id" : "contact_image",
+  "name" : "contact_image",
+  "display_width" : null,
+  "label" : "contact image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "src" : "",
+    "alt" : null,
+    "size_type" : null,
+    "width" : null,
+    "height" : null,
+    "max_width" : null,
+    "max_height" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "contact_text",
+  "name" : "contact_text",
+  "display_width" : null,
+  "label" : "contact text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

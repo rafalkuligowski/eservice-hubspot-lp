@@ -1,0 +1,736 @@
+{% import './tools/_macros.css' %}
+
+{## Table of contents
+
+  1. Variables
+    1a. Containers
+    1b. Colors
+    1c. Typography
+    1d. Buttons
+    1e. Forms
+    1f. Tables
+    1g. Site header
+    1h. Site footer
+  2. Containers / Grid / DnD Areas
+  3. Typography
+  4. Buttons
+  5. Forms
+  6. Tables
+  7. Site header
+  8. Site footer
+  9. Blog
+  10. System pages
+  11. Modules
+
+##}
+
+{###########################################################################}
+{############################   1. Variables   #############################}
+{###########################################################################}
+
+/* 1a. Containers */
+
+{% set container_width = theme.spacing.max_width ~ 'px' %}
+{% set dnd_section_padding = theme.spacing.vertical_spacing / 2 ~ 'px ' ~ '20px' %}
+
+/* 1b. Colors */
+
+{% set primary_color = theme.global_colors.primary_color.color  %}
+{% set secondary_color = theme.global_colors.secondary_color.color %}
+
+/* 1c. Typography */
+
+{% set primary_font = theme.global_fonts.primary_font %}
+{% set secondary_font = theme.global_fonts.secondary_font %}
+
+{% set body_font = theme.typography.body_text %}
+
+{% set heading_one = theme.typography.heading_one %}
+{% set heading_two = theme.typography.heading_two %}
+{% set heading_three = theme.typography.heading_three %}
+{% set heading_four = theme.typography.heading_four %}
+{% set heading_five = theme.typography.heading_five %}
+{% set heading_six = theme.typography.heading_six %}
+
+{% set anchor_font_color = theme.typography.link_color.color %}
+
+/* 1d. Buttons */
+
+{% set button_bg_color = color(theme.buttons.background_color) %}
+{% set button_font_color = theme.buttons.text_color.color %}
+{% set button_border = theme.buttons.border_width ~ 'px solid ' ~ theme.buttons.border_color.color %}
+{% set button_corner_radius = theme.buttons.border_radius ~ 'px' %}
+{% set button_spacing = theme.buttons.vertical_padding ~ 'px' ~ ' ' ~ theme.buttons.horizontal_padding ~ 'px' %}
+
+/* 1e. Forms */
+
+{% set form_title_bg_color = color(theme.forms.header_background_color) %}
+{% set form_title_font_color = theme.forms.header_text_color.color %}
+
+{% set form_label_font_color = theme.forms.label_color.color %}
+{% set form_help_text_font_color = theme.forms.help_text_color.color %}
+
+{% set form_input_border_color = theme.forms.field_border_color.color %}
+{% set form_input_focus_border_color = theme.forms.field_focus_border_color.color %}
+
+/* 1f. Tables */
+
+{% set table_bg_color = color(theme.tables.body_background_color) %}
+{% set table_font_color = theme.tables.body_text_color.color %}
+{% set table_border_color = theme.global_colors.text_elements_color.color %}
+
+{% set table_footer_bg_color = color(theme.tables.footer_background_color) %}
+{% set table_footer_font_color = theme.tables.footer_text_color.color %}
+
+/* 1g. Site header */
+
+{% set header_bg_color = color(theme.header.background_color) %}
+{% set header_nav_link_color = theme.header.menu_link_color.color %}
+{% set header_child_nav_border_color = theme.header.child_menu_border_color.color %}
+
+/* 1h. Site footer */
+
+{% set footer_bg_color = color(theme.footer.background_color) %}
+{% set footer_font_color = theme.footer.text_color.color %}
+
+{###########################################################################}
+{##################   2. Containers / Grid / DnD Areas   ###################}
+{###########################################################################}
+
+.content-wrapper {
+  max-width: {{ container_width }};
+}
+
+.dnd-section,
+.content-wrapper--vertical-spacing {
+  padding: {{ dnd_section_padding }};
+}
+
+/* .dnd-section:first-of-type  ,
+.content-wrapper--vertical-spacing:first-of-type   {
+  padding-bottom: {{theme.spacing.vertical_spacing}}px;
+} */
+
+.dnd-section:last-child,
+.content-wrapper--vertical-spacing:last-child {
+  padding-bottom: {{theme.spacing.vertical_spacing}}px;
+}
+
+.dnd-section > .row-fluid {
+  max-width: {{ container_width }};
+}
+
+.default-shadow-box {
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba({{theme.global_colors.primary_color.color|convert_rgb}}, 0.08);
+}
+
+{###########################################################################}
+{###########################   3. Typography   #############################}
+{###########################################################################}
+
+html, body {
+  font-size: {{ body_font.size ~ body_font.size_unit }};
+  color: {{ body_font.color }};
+}
+
+/* Paragraphs */
+
+p {
+  {{ body_font.style }};
+}
+
+/* Anchors */
+
+a {
+  color: {{ anchor_font_color }};
+}
+
+a:hover,
+a:focus {
+  color: {{ color_variant(anchor_font_color, -40) }};
+}
+
+a:active {
+  color: {{ color_variant(anchor_font_color, 40) }};
+}
+
+.click-propagator {
+  cursor:pointer;
+}
+
+/* Headings */
+
+h1 {
+  {{ heading_one.style }};
+  color: {{ heading_one.color }};
+  font-size: {{ heading_one.size ~ heading_one.size_unit }};
+}
+
+h2 {
+  {{ heading_two.style }};
+  color: {{ heading_two.color }};
+  font-size: {{ heading_two.size ~ heading_two.size_unit }};
+}
+
+h3 {
+  {{ heading_three.style }};
+  color: {{ heading_three.color }};
+  font-size: {{ heading_three.size ~ heading_three.size_unit }};
+}
+
+h4 {
+  {{ heading_four.style }};
+  color: {{ heading_four.color }};
+  font-size: {{ heading_four.size ~ heading_four.size_unit }};
+}
+
+h5 {
+  {{ heading_five.style }};
+  color: {{ heading_five.color }};
+  font-size: {{ heading_five.size ~ heading_five.size_unit }};
+}
+
+h6 {
+  {{ heading_six.style }};
+  color: {{ heading_six.color }};
+  font-size: {{ heading_six.size ~ heading_six.size_unit }};
+}
+
+/* Blockquote */
+
+blockquote {
+  border-left-color: {{ secondary_color }};
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+{###########################################################################}
+{############################   4. Buttons   ###############################}
+{###########################################################################}
+/*
+button,
+.button {
+  background-color: {{ button_bg_color }};
+  border: {{ button_border }};
+  border-radius: {{ button_corner_radius }};
+  color: {{ button_font_color }};
+  padding: {{ button_spacing }};
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  background-color: rgba({{ color_variant(theme.buttons.background_color.color, -40)|convert_rgb }}, {{ theme.buttons.background_color.opacity / 100 }});
+  border-color: {{ color_variant(theme.buttons.border_color.color, -40) }};
+  color: {{ button_font_color }};
+}
+
+button:active,
+.button:active {
+  background-color: rgba({{ color_variant(theme.buttons.background_color.color, 40)|convert_rgb }}, {{ theme.buttons.background_color.opacity / 100 }});
+  border-color: {{ color_variant(theme.buttons.border_color.color, 40) }};
+  color: {{ button_font_color }};
+} */
+
+{###########################################################################}
+{##############################   5. Forms   ###############################}
+{###########################################################################}
+
+/* Somehow hubspot adds form styling that breaks on mobile (even though form is set to be raw html) part below should be a workaround */
+@media screen and (max-width: 767px) {
+  form[class*="hs-form-"] .form-columns-2.form-columns-2 .hs-form-field.hs-form-field .hs-input:not([type="checkbox"]) {
+    width: 100%;
+  }
+}
+/* end of workaround */
+
+.submitted-message {
+  padding:32px 0;
+  font-size:24px;
+  text-align: center;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.submitted-message * {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* Form title */
+
+/* h3.form-title {
+  background-color: {{ form_title_bg_color }};
+  color: {{ form_title_font_color }};
+} */
+
+/* Form label */
+
+/* form label {
+  color: {{ form_label_font_color }};
+} */
+
+/* Form help text */
+
+/* form legend {
+  color: {{ form_help_text_font_color }};
+} */
+
+/* Form inputs */
+/*
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=number],
+input[type=file],
+select,
+textarea {
+  border-color: {{ form_input_border_color }};
+  color: {{ body_font.color }};
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=tel]:focus,
+input[type=number]:focus,
+input[type=file]:focus,
+select:focus,
+textarea:focus {
+  border-color: {{ form_input_focus_border_color }};
+} */
+
+/* Form placeholder text */
+/*
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder,
+::placeholder,
+.hs-fieldtype-date .input .hs-dateinput:before {
+  color: {{ body_font.color }}; */
+}
+
+/* Date picker */
+/*
+.fn-date-picker td.is-selected .pika-button {
+  background: {{ primary_color }};
+}
+
+.fn-date-picker td .pika-button:hover {
+  background-color: {{ primary_color }} !important;
+}
+
+.fn-date-picker td.is-today .pika-button {
+  color: {{ primary_color }}; */
+}
+
+/* Submit button */
+/*
+form input[type=submit],
+form .hs-button {
+  background-color: {{ button_bg_color }};
+  border: {{ button_border }};
+  border-radius: {{ button_corner_radius }};
+  color: {{ button_font_color }};
+  padding: {{ button_spacing }};
+}
+
+form input[type=submit]:hover,
+form input[type=submit]:focus,
+form .hs-button:hover,
+form .hs-button:focus {
+  background-color: rgba({{ color_variant(theme.buttons.background_color.color, -40)|convert_rgb }}, {{ theme.buttons.background_color.opacity / 100 }});
+  border-color: {{ color_variant(theme.buttons.border_color.color, -40) }};
+  color: {{ button_font_color }};
+}
+
+form input[type=submit]:active,
+form .hs-button:active {
+  background-color: rgba({{ color_variant(theme.buttons.background_color.color, 40)|convert_rgb }}, {{ theme.buttons.background_color.opacity / 100 }});
+  border-color: {{ color_variant(theme.buttons.border_color.color, 40) }};
+  color: {{ button_font_color }}; */
+}
+
+{###########################################################################}
+{#############################   6. Tables   ###############################}
+{###########################################################################}
+
+table {
+  background-color: {{ table_bg_color }};
+}
+
+th,
+td {
+  border-color: {{ table_border_color }};
+  color: {{ table_font_color }};
+}
+
+th {
+  background-color: {{theme.global_colors.primary_color.color}};
+  color: white;
+}
+
+.isobar-table .section {
+  background-color: {{theme.global_colors.secondary_color.color}};
+  color: {{theme.global_colors.primary_color.color}};
+}
+
+.isobar-table .first-bolded td:first-of-type,
+.isobar-table .first-bolded th:first-of-type {
+  font-weight: 800;
+}
+
+{###########################################################################}
+{###########################   7. Site header   ############################}
+{###########################################################################}
+
+.header {
+  background-color: {{ header_bg_color }};
+}
+
+.header__logo .logo-company-name,
+.header__language-switcher-label-current,
+.header__language-switcher .lang_list_class li a {
+  color: {{ header_nav_link_color }};
+  font-family: {{ primary_font.font }};
+  text-transform: initial;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.header__language-switcher-label-current:hover,
+.header__language-switcher-label-current:focus,
+.header__language-switcher .lang_list_class li:hover a,
+.header__language-switcher .lang_list_class li a:focus {
+  color: #0140BE;
+}
+
+body .header__language-switcher-label-current:active,
+body .header__language-switcher .lang_list_class li a:active {
+  color: {{ color_variant(header_nav_link_color, 40) }};
+}
+
+body .header__language-switcher .lang_list_class {
+  /* background-color: {{ header_bg_color }}; */
+  border-color: {{ header_child_nav_border_color }};
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 16px 32px #0140BE14;
+  border-radius: 0px 0px 16px 16px;
+}
+
+@media screen and (max-width:1024px) {
+  body .header__language-switcher .lang_list_class {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+body .header__language-switcher .lang_list_class:before {
+  border-bottom-color: {{ header_child_nav_border_color }};
+}
+
+body .header__language-switcher .lang_list_class li:hover{
+  background-color: {{ header_bg_color }};
+}
+
+.header__language-switcher .lang_list_class.first-active::after {
+  border-bottom-color: {{ header_bg_color }};
+}
+
+.header__language-switcher-label-current,
+.header__language-switcher .lang_list_class li a {
+  font-family: {{ primary_font.font }};
+}
+
+.header__language-switcher-label-current:after {
+  border-top-color: {{ header_nav_link_color }};
+}
+
+@media(max-width: {{theme.grid.desktop_min - 1}}px) {
+  .header__navigation {
+    background-color: {{ header_bg_color }};
+  }
+
+  .header__navigation-toggle svg {
+    fill: {{ header_nav_link_color }};
+  }
+}
+
+{###########################################################################}
+{###########################   8. Site footer   ############################}
+{###########################################################################}
+/*
+.footer {
+  background-color: {{ footer_bg_color }};
+} */
+
+/* Footer Content */
+/*
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6
+.footer p,
+.footer a,
+.footer div,
+.footer span {
+  color: {{ footer_font_color }};
+} */
+
+{###########################################################################}
+{##############################   9. Blog   ################################}
+{###########################################################################}
+
+.blog-post__date {
+  border-color: {{ body_font.color }};
+}
+
+.blog-card__tag-link:hover,
+.blog-card__title a:hover,
+.blog-tag-filter__menu-link:hover,
+.blog-post__tag-link:hover,
+.blog-post__author-name:hover,
+.blog-card__tag-link:focus,
+.blog-card__title a:focus,
+.blog-tag-filter__menu-link:focus,
+.blog-post__tag-link:focus,
+.blog-post__author-name:focus {
+  color: {{ color_variant(body_font.color, -40) }};
+}
+
+.blog-card__tag-link:active,
+.blog-card__title a:active,
+.blog-tag-filter__menu-link:active,
+.blog-post__tag-link:active,
+.blog-post__author-name:active {
+  color: {{ color_variant(body_font.color, 40) }};
+}
+
+.blog-tag-filter__menu-link--active-item:after {
+  background-color: {{ primary_color }};
+}
+
+/* .blog-pagination__link {
+  color: {{ body_font.color }};
+} */
+
+/* .blog-pagination__link--active:after,
+.blog-pagination__prev-link:after,
+.blog-pagination__next-link:after {
+  background-color: {{ primary_color }};
+} */
+
+.blog-post__title {
+  {{ heading_two.style }};
+  color: {{ heading_two.color }};
+  font-size: {{ heading_two.size ~ heading_two.size_unit }};
+}
+
+.blog-post__author {
+  background-color: {{ secondary_color }};
+}
+
+#comments-listing .comment-reply-to {
+  color: {{ anchor_font_color }};
+}
+
+#comments-listing .comment-reply-to:hover,
+#comments-listing .comment-reply-to:focus {
+  color: {{ color_variant(anchor_font_color, -40) }};
+}
+
+#comments-listing .comment-reply-to:active {
+  color: {{ color_variant(anchor_font_color, 40) }};
+}
+
+{###########################################################################}
+{##########################   10. System pages   ###########################}
+{###########################################################################}
+
+
+
+{###########################################################################}
+{############################   11. Modules   ##############################}
+{###########################################################################}
+
+
+body .icon svg {
+  fill: {{ primary_color }};
+}
+
+body .tns-nav button.tns-nav-active {
+  background-color: {{ primary_color }};
+}
+
+body .tns-nav button:hover,
+body .tns-nav button:focus {
+  background-color: {{ primary_color }};
+}
+
+body .team-member__description {
+  background-color: {{ secondary_color }};
+}
+
+.hs_cos_wrapper_type_rich_text p,
+.hs_cos_wrapper_type_rich_text h1,
+.hs_cos_wrapper_type_rich_text h2,
+.hs_cos_wrapper_type_rich_text h3,
+.hs_cos_wrapper_type_rich_text h4,
+.hs_cos_wrapper_type_rich_text h5,
+.hs_cos_wrapper_type_rich_text h6,
+.hs_cos_wrapper_type_rich_text ul,
+.hs_cos_wrapper_type_rich_text ol,
+.hs_cos_wrapper_type_rich_text blockquote {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1.4rem 0;
+  padding: 0;
+}
+.hs_cos_wrapper_type_rich_text p, .hs_cos_wrapper_type_rich_text li {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.hs_cos_wrapper_type_rich_text ul {
+  list-style: none;
+  margin-left: 1rem;
+}
+.hs_cos_wrapper_type_rich_text ol {
+  margin-left: 2rem;
+}
+.hs_cos_wrapper_type_rich_text li {
+  margin: 0.5rem 0;
+  position: relative;
+}
+.hs_cos_wrapper_type_rich_text ul li {
+  padding: 0 0 0 20px;
+}
+.hs_cos_wrapper_type_rich_text ul li:before {
+  content: '';
+  min-width: 7px;
+  height: 14px;
+  display: block;
+  background: url("{{ get_asset_url('/isobar-eservice-theme/images/icons/arrow-right.svg') }}") no-repeat center/contain;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+.hs_cos_wrapper_type_rich_text ul ul li:before {
+  filter: grayscale(100%);
+}
+.hs_cos_wrapper_type_rich_text *:last-child {
+  margin-bottom: 0;
+}
+
+.hs_cos_wrapper_type_rich_text p, .hs_cos_wrapper_type_rich_text p span {
+  font-family: {{ primary_font.font }} !important;
+  font-size: {{theme.typography.body_text.size}}px !important;
+  text-decoration: none !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+}
+
+.hs_cos_wrapper_type_rich_text h1, .hs_cos_wrapper_type_rich_text h1 span {
+  font-family: {{ primary_font.font }} !important;
+  text-decoration: none !important;
+  font-size: {{theme.typography.heading_one.size}}px !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+  font-size: {{ heading_one.size ~ heading_one.size_unit }};
+}
+
+.hs_cos_wrapper_type_rich_text h2, .hs_cos_wrapper_type_rich_text h2 span {
+  font-family: {{ primary_font.font }} !important;
+  text-decoration: none !important;
+  font-size: {{theme.typography.heading_two.size}}px !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+  font-size: {{ heading_two.size ~ heading_two.size_unit }};
+}
+
+.hs_cos_wrapper_type_rich_text h3, .hs_cos_wrapper_type_rich_text h3 span {
+  font-family: {{ primary_font.font }} !important;
+  text-decoration: none !important;
+  font-size: {{theme.typography.heading_three.size}}px !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+  font-size: {{ heading_three.size ~ heading_three.size_unit }};
+}
+
+.hs_cos_wrapper_type_rich_text h4, .hs_cos_wrapper_type_rich_text h4 span {
+  font-family: {{ primary_font.font }} !important;
+  text-decoration: none !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+  font-size: {{ heading_four.size ~ heading_four.size_unit }};
+}
+
+.hs_cos_wrapper_type_rich_text h5, .hs_cos_wrapper_type_rich_text h5 span {
+  font-family: {{ primary_font.font }} !important;
+  text-decoration: none !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+  font-size: {{ heading_five.size ~ heading_five.size_unit }};
+}
+
+.hs_cos_wrapper_type_rich_text h6, .hs_cos_wrapper_type_rich_text h6 span {
+  font-family: {{ primary_font.font }} !important;
+  text-decoration: none !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+  font-size: {{ heading_six.size ~ heading_six.size_unit }};
+}
+
+.hs_cos_wrapper_type_rich_text a:not(.override-exception), .hs_cos_wrapper_type_rich_text a:not(.override-exception) span {
+  font-family: {{ primary_font.font }} !important;
+  font-size: inherit !important;
+  text-decoration: none;
+  color: {{ primary_color }} !important;
+}
+
+.hs_cos_wrapper_type_rich_text img {
+  max-width: 100% !important;
+}
+
+
+.hs_cos_wrapper_type_rich_text ul > li, .hs_cos_wrapper_type_rich_text ul > li span {
+  font-family: {{ primary_font.font }} !important;
+  font-size: {{theme.typography.body_text.size}}px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  color: {{theme.global_colors.text_color.color}} !important;
+}
+
+.sklepy-w-sieci .dnd-section {
+  position: relative;
+}
+
+.only-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .only-mobile {
+    display: block;
+  }
+
+  img.only-mobile {
+    max-width: 450px!important;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  img.only-mobile.full-width {
+    max-width: unset!important;
+  }
+}

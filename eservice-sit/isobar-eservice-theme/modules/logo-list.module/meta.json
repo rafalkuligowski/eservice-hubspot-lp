@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_POST" ],
+  "inline_help_text" : "Shows logos in a grid",
+  "icon" : "https://www.eservice.pl/hubfs/module-icons/logo-list.svg",
+  "host_template_types" : [ "PAGE", "BLOG_POST" ],
+  "module_id" : 92648073850,
+  "label" : "Logo list",
+  "is_available_for_new_content" : true
+}

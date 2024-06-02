@@ -1,0 +1,38 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Isobar - 404 error template no header and footer
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends "./layouts/base-cba-no-header-and-footer.html" %}
+
+{% block body %}
+<main id="main-content"  class="body-container-wrapper error-page center">
+{% dnd_area 'dnd_area' class='body-container body-container--home', label='Main section' %}
+    {% dnd_section%}
+      {% dnd_column
+        width=12 %}
+          {% dnd_row %}
+            {% dnd_module "header" path="@hubspot/header", value="Ups...", "header_tag"="h1" %}}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+          {% dnd_row %}
+            {% dnd_module "text" path="@hubspot/text", value="The page you are trying to reach is no longer avaliable or it changed address. Tell us what you are looking for." %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+          {% dnd_row 
+          %}
+            {% dnd_module "iso-search-input" path="/isobar-eservice-theme/modules/iso-search-input" placeholder="{{ widget_data.translations_global.search }}" %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+          {% dnd_row 
+          %}
+            {% dnd_module "error-page" path="../modules/error-page.module/" %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+      {% end_dnd_column %}
+      
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

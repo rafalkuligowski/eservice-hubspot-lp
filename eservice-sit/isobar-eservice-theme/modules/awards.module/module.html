@@ -1,0 +1,48 @@
+<div class="awards">
+    <div class="awards__main">
+        {% for item in module.main_rewards %}
+        <div class="e-shadow-box">
+            <div class="e-shadow-box__content e-shadow-box__content--thin e-shadow-box__content--center">
+                <figure class="e-shadow-box__image e-shadow-box__image--fluid">
+                    {% if item.Image.src %}
+                    {% set sizeAttrs = 'width="{{ item.Image.width }}" height="{{ item.Image.height }}"' %}
+                    {% if item.Image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif item.Image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.Image.max_width }}px;
+                    max-height: {{ item.Image.max_height }}px"' %}
+                    {% endif %}
+                    {% set loadingAttr = item.Image.loading != 'disabled' ? 'loading="{{ item.Image.loading }}"' : '' %}
+                    <img src="{{ item.Image.src }}" alt="{{ item.Image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}
+                         class="e-shadow-box__image-el">
+                    {% endif %}
+                </figure>
+                <h3 class="e-shadow-box__title">{{ item.title }}</h3>
+                <div class="e-shadow-box__description">
+                    <p>{{ item.year }}</p>
+                    {% inline_rich_text field="description" value="{{ item.description }}" %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="awards-timeline">
+        <h3 class="awards-timeline__title">{{ module.others_awards }}</h3>
+        {% for item in module.timeline %}
+        <div class="awards-timeline__items">
+            {% for item2 in item.award %}
+            <div class="award-timeline">
+                <h4 class="award-timeline__title">{{ item2.title }}</h4>
+                <div class="award-timeline__desc">{% inline_rich_text field="description" value="{{ item2.description }}" %}</div>
+            </div>
+            {% if loop.index == 1%}
+            <div class="awards-timeline__year" data-year="{{ item.year }}"></div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <button type="button" class="awards-timeline__more">{{ module.show_all }}</button>
+</div>
+
+

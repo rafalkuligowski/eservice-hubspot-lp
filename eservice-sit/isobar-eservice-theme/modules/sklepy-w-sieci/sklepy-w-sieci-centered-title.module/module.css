@@ -1,0 +1,7 @@
+.centered-title-module {
+    text-align: center;
+}
+
+.centered-title-module *{
+    text-align: center;
+}

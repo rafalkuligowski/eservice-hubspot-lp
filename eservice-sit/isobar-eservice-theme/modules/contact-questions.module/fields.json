@@ -1,0 +1,69 @@
+[ {
+  "id" : "3ef4353b-1925-012f-ab4e-732fb6436e49",
+  "name" : "subjects",
+  "display_width" : null,
+  "label" : "Subjects",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "4b86c000-02df-e6ba-7ce8-932a2990799a",
+    "name" : "subject",
+    "display_width" : null,
+    "label" : "Subject",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "78161a67-91a3-b5cd-bd36-6f9a84054739",
+    "name" : "questions",
+    "display_width" : null,
+    "label" : "Questions",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "acee0972-05cb-c6bb-66b7-1432a63b4266",
+      "name" : "question",
+      "display_width" : null,
+      "label" : "Question",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "0216b625-f849-77b3-c162-65a0e9a152e1",
+      "name" : "answer",
+      "display_width" : null,
+      "label" : "Answer",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "questions" : { }
+  }
+} ]

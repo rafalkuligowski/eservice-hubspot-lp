@@ -1,0 +1,172 @@
+.merchant-finder-module .button.disabled {
+    pointer-events: none;
+    cursor: initial;
+}
+
+.merchant-finder-module__mode-select-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 36px;
+}
+
+.merchant-finder-module__mode-select-wrapper .left-column {
+    width: 30%;
+    padding: 0 12px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.merchant-finder-module__mode-select-wrapper .right-column {
+    width: 60%;
+    padding: 0 12px;
+}
+
+.merchant-finder-module__mode-select-wrapper .localisation-warning {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0 0 12px;
+}
+
+.merchant-finder-module .right-column__buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.merchant-finder-module .right-column__buttons-wrapper .merchant-finder-module__mode-select-button  {
+    width: calc(50% - 12px);
+}
+
+.merchant-finder-module__mode-select-button {
+    padding: 36px 12px;
+    background: none;
+    background-color: white;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0px 8px 32px #002C8414;
+    border: 2px solid transparent;
+}
+
+.merchant-finder-module__mode-select-button.active {
+    border: 2px solid #0140BE;
+}
+
+.merchant-finder-module__results-button-wrapper {
+    width: 100%;
+    text-align: center;
+    padding: 24px;
+}
+
+.merchant-finder-module__mode-input {
+    max-width: 608px;
+    margin: 0 auto;
+}
+
+.merchant-finder-module__mode-input label {
+    display: block;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+.merchant-finder-module__mode {
+    display: none;
+}
+
+.voivodeship-mode .merchant-finder-module__mode-voivodeship {
+    display:block;
+}
+
+.radius-mode .merchant-finder-module__mode-radius {
+    display: block;
+}
+
+.merchant-finder-module .results-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 36px 12px;
+}
+
+.merchant-finder__result-element {
+    display: block;
+    position: relative;
+    width: calc(50% - 12px);
+    padding: 24px 12px 24px 108px;
+    flex-grow: 0;
+    margin-right: 24px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 32px #002c8414;
+    background-color: white;
+}
+
+.merchant-finder__result-element::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 64px;
+    width: 64px;
+    left: 24px;
+    top: 24px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.merchant-finder__result-element:nth-child(2n) {
+    margin-right: 0;
+}
+
+.merchant-finder__result-element .company-name, .merchant-finder__result-element .street-name, .merchant-finder__result-element .city-and-zip {
+    display: block;
+    width: 100%;
+}
+
+.merchant-finder__result-element .company-name {
+    font-weight: bold;
+}
+
+.merchant-finder-module__error {
+    font-weight: bold;
+    color: #F83706;
+}
+
+@media screen and (max-width: 1023px) {
+    .merchant-finder-module__mode-select-wrapper {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 12px 0 36px;
+    }
+
+    .merchant-finder-module__mode-select-wrapper .left-column {
+        width: 100%;
+        padding: 12px 0 24px;
+    }
+
+    .merchant-finder-module__mode-select-button {
+        padding: 36px 12px;
+        width: 100%;
+    }
+
+    .merchant-finder-module__mode-select-wrapper .right-column {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .merchant-finder-module .right-column__buttons-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .merchant-finder-module .right-column__buttons-wrapper .merchant-finder-module__mode-select-button {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .merchant-finder__result-element.merchant-finder__result-element {
+        width: 100%;
+        margin: 12px 0;
+    }
+}

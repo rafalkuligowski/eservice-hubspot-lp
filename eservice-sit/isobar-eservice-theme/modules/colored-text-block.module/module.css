@@ -1,0 +1,32 @@
+.colored-text {
+    padding: 64px 24px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.colored-text__title {
+    text-align: center;
+}
+
+.colored-text__box {
+    display: block;
+    margin: 0 auto 48px;
+    width: 80%;
+    max-width: 900px;
+}
+
+.colored-text__box:last-child {
+    margin-bottom: 0;
+}
+
+.colored-text__box--framed {
+    width: 100%;
+    padding: 32px;
+    border-radius: 24px;
+}
+
+@media screen and (max-width: 1023px) {
+    .colored-text__box {
+        width: 100%;
+    }
+}

@@ -1,0 +1,29 @@
+.logo-list {
+    margin-bottom: -16px;
+}
+
+.logo-list__logos-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.logo-list__logo-wrapper {
+    margin-bottom: 16px;
+}
+
+.logo-list__logo {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 1023px) {
+    .logo-list {
+        margin-bottom: -4.667vw;
+    }
+
+    .logo-list__logo-wrapper {
+        margin-bottom: 4.667vw;
+    }
+}

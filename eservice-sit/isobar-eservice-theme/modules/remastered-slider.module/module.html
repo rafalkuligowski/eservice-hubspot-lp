@@ -1,0 +1,305 @@
+<div class="testimonial testimonial-{{name}}">
+  <div class="quote-container">
+
+      <div class="quote-arrows">
+          <button class="previous"></button>
+          <button class="next"></button>
+      </div>
+    {% for testimonial in module.slider_setting.testimonials %}
+    <div class="quote-wrap">
+      <div class="quote-box">
+        <!-- {% if testimonial.quote %}<blockquote>{{ testimonial.quote }}</blockquote>{% endif %} -->
+        <div class="client-detail">
+          {% if testimonial.image.src %}
+          <div class="image-wrapper 
+              {%if testimonial.fitvertical %}image-wrapper--fit-vertical{% else %}image-wrapper--fit-horizontal {% endif %}
+              {%if testimonial.mobile.fitvertical %}image-wrapper--fit-vertical--mobile{% else %}image-wrapper--fit-horizontal--mobile {% endif %} 
+              {% if testimonial.has_outline %}image-wrapper--outlined {% endif %}
+          "> 
+              {% if loop.index > 0 %}
+              <img class="testimonial__image testimonial__image--mobile lazyLoadImage" data-lazy-src="{{ testimonial.mobile.image.src }}" alt="{{ testimonial.mobile.image.alt }}">
+              <img class="testimonial__image testimonial__image--desktop lazyLoadImage" data-lazy-src="{{ testimonial.image.src }}" alt="{{ testimonial.image.alt }}">
+              {% else %}
+              <img class="testimonial__image testimonial__image--desktop" src="{{ testimonial.image.src }}" alt="{{ testimonial.image.alt }}">
+              <img class="testimonial__image testimonial__image--mobile" src="{{ testimonial.mobile.image.src }}" alt="{{ testimonial.mobile.image.alt }}">
+              {% endif %}
+          </div>
+          {% endif %}
+          {% if !testimonial.text_content.is_under_the_image %}
+          <div class="testimonial__content-wrapper">
+              <div class="text-content--wrapper text-content--wrapper--{{testimonial.text_content.horizontal_alignment}}  text-content--wrapper--{{testimonial.text_content.vertical_alignment}}" style="
+              background-color: rgba({{testimonial.text_content.backdrop_color.color|convert_rgb}}, {{testimonial.text_content.backdrop_color.opacity / 100 }});
+              color: rgba({{testimonial.text_content.font_color.color|convert_rgb}}, {{testimonial.text_content.font_color.opacity}});
+              max-width: {{testimonial.text_content.max_content_width}};
+              {% if testimonial.text_content.backdrop_color.opacity == 0 %}
+                padding: 0;
+              {% endif %}
+              ">
+              {% if testimonial.text_content.text %} 
+              <div class="text-content--text">
+                  {{testimonial.text_content.text}}
+              </div>
+              {% endif %}
+              {% if testimonial.text_content.link_group_link.url.href and testimonial.text_content.link_group_text %} 
+                  <div class="text-content--link">
+                  <a href="{{testimonial.text_content.link_group_link.url.href}}" target="{% if testimonial.text_content.link_group_link.open_in_new_tab %}_blank{% endif %}" class="button button--{{testimonial.text_content.button_type}}">{{testimonial.text_content.link_group_text}}</a>
+                  </div>
+              {% endif %}
+              
+              </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% if testimonial.text_content.is_under_the_image %}
+        <div class="testimonial__content-wrapper--under-the-image">
+            <div class="text-content--wrapper text-content--wrapper--{{testimonial.text_content.horizontal_alignment}}  text-content--wrapper--{{testimonial.text_content.vertical_alignment}}" style="
+            background-color: rgba({{testimonial.text_content.backdrop_color.color|convert_rgb}}, {{testimonial.text_content.backdrop_color.opacity / 100 }});
+            color: rgba({{testimonial.text_content.font_color.color|convert_rgb}}, {{testimonial.text_content.font_color.opacity}});
+            max-width: {{testimonial.text_content.max_content_width}};
+            ">
+            {% if testimonial.text_content.text %} 
+            <div class="text-content--text">
+                {{testimonial.text_content.text}}
+            </div>
+            {% endif %}
+            {% if testimonial.text_content.link_group_link.url.href and testimonial.text_content.link_group_text %} 
+                <div class="text-content--link">
+                <a href="{{testimonial.text_content.link_group_link.url.href}}" target="{% if testimonial.text_content.link_group_link.open_in_new_tab %}_blank{% endif %}" class="button button--{{testimonial.text_content.button_type}}">{{testimonial.text_content.link_group_text}}</a>
+                </div>
+            {% endif %}
+            
+            </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    
+    <ul class="quote-dots"></ul>
+  </div>
+    <!-- Hubl values to be used in Javascript -->
+    <input type="hidden" name="testimonial-autoplay" class="testimonial-autoplay" value="{{ module.slider_setting.testimonial_style.general.autoplay }}">
+    <input type="hidden" name="testimonial-speed" class="testimonial-speed" value="{{ module.slider_setting.testimonial_style.general.speed }}">
+
+</div> <!--  close Testimonial -->
+
+
+{% require_css %}
+<style>
+  /* .testimonial-{{name}} .text-content--wrapper {
+
+  } */
+  /* Disable Arrows on condition*/
+  {% if module.slider_setting.testimonial_style.arrow_setting.enable_arrows == 'false' %} 
+    .testimonial-{{name}} .quote-arrows .previous, .testimonial-{{name}} .quote-arrows .next {
+            display: none !important;
+    }
+  {% endif %}
+  /* Disable Dots on condition */
+  {% if module.slider_setting.testimonial_style.dot_setting.enable_dots == 'false' %} 
+    .testimonial-{{name}} ul.quote-dots {
+            display: none !important;
+    }
+  {% endif %}
+  
+  .testimonial-{{name}} {
+    background: rgba({{ module.slider_setting.testimonial_style.general.background.color|convert_rgb }}, {{ module.slider_setting.testimonial_style.general.background.opacity / 100}});
+    color: rgba({{ module.slider_setting.testimonial_style.general.foreground.color|convert_rgb }}, {{ module.slider_setting.testimonial_style.general.foreground.opacity / 100}});
+    padding: {{ module.slider_setting.testimonial_style.general.padding }};
+  }
+  .testimonial-{{name}} .image-wrapper {
+    height: {{ module.slider_setting.testimonial_style.general.image_height }};
+    max-height: {{ module.slider_setting.testimonial_style.general.image_max_height }};
+  }
+  .testimonial-{{name}} .quote-container{
+    height: auto;
+    max-height: none;
+  }
+  @media screen and (max-width: 1023px) {
+    {% if module.is_slider %}
+      .hero__image {
+          align-items: flex-start;
+          height: {{ module.slider_setting.testimonial_style.general.mobile_image_height }};
+          max-height: {{ module.slider_setting.testimonial_style.mobile_image_max_height }};
+      }
+  {% endif %}
+    .testimonial-{{name}} .image-wrapper {
+      height: {{ module.slider_setting.testimonial_style.general.mobile_image_height }};
+      max-height: {{ module.slider_setting.testimonial_style.general.mobile_image_max_height }};
+    }
+  }
+  .testimonial-{{name}} .quote-container {
+    float: none;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .testimonial-{{name}} .quote-container {
+    float: none;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .testimonial-{{name}} ul.quote-dots li {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    height: {{module.slider_setting.testimonial_style.dot_setting.size}}px;
+    width: {{module.slider_setting.testimonial_style.dot_setting.size}}px;
+    border-radius: {{module.slider_setting.testimonial_style.dot_setting.round}}%;
+    opacity: {{module.slider_setting.testimonial_style.dot_setting.inactive_opacity}};
+    {% if module.slider_setting.testimonial_style.dot_setting.inactive_opacity < 1 %}
+      background-color: rgba({{module.slider_setting.testimonial_style.dot_setting.background_color.color|convert_rgb}}, 1);
+    {% endif %}
+    border-width: {{module.slider_setting.testimonial_style.dot_setting.border_width}}px;
+    border-style: solid;
+    {% set background_opacity = module.slider_setting.testimonial_style.dot_setting.background_color.opacity / 100 %}
+    border-color: rgba({{module.slider_setting.testimonial_style.dot_setting.background_color.color|convert_rgb}}, 1);
+    /* background-color: white; */
+    /* opacity: 0.4; */
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  {% if module.slider_setting.testimonial_style.dot_setting.inactive_opacity == 1 %}
+
+  {% set fill_size = module.slider_setting.testimonial_style.dot_setting.size - (2 * module.slider_setting.testimonial_style.dot_setting.border_width) - (2 * module.slider_setting.testimonial_style.dot_setting.internal_padding )  %}
+  ul.quote-dots li.active:after {
+    height: {{ fill_size }}px;
+    width: {{ fill_size }}px;
+    background-color: rgba({{module.slider_setting.testimonial_style.dot_setting.background_color.color|convert_rgb}}, 1);
+    border-radius: {{module.slider_setting.testimonial_style.dot_setting.round}}%;
+    test-attribute: {{module.slider_setting.testimonial_style.dot_setting.internal_padding }};
+  }
+  {% endif %}
+
+  .testimonial-{{name}} ul.quote-dots li.active {
+    opacity:1;
+  }
+
+  @media screen and (max-width: 767px) {
+    .testimonial-{{name}} .quote-container {
+      max-width: 100%;
+    }
+  }
+
+  .testimonial-{{name}} .quote-box blockquote {
+    font-size: {{ module.slider_setting.testimonial_style.quote.font_size }}px;
+    {% if module.slider_setting.testimonial_style.quote.italic %} 
+        font-style: italic;
+    {% endif %};
+  }
+  .testimonial-{{name}} .quote-box blockquote::before{
+    font-size: {{ module.slider_setting.testimonial_style.quote.comma_size }}px;
+  }
+  .testimonial-{{name}} .quote-box blockquote::after{
+    font-size: {{ module.slider_setting.testimonial_style.quote.comma_size }}px;
+  }
+  .testimonial-{{name}} .client-detail .name {
+    font-size: {{ module.slider_setting.testimonial_style.client.name_font_size }}px;
+    {% if module.slider_setting.testimonial_style.client.name_bold %} 
+        font-weight: bold;
+    {% endif %};
+  }
+  .testimonial-{{name}} .client-detail .info {
+    font-size: {{ module.slider_setting.testimonial_style.client.info_font_size }}px;
+  }
+
+  {% if module.slider_setting.testimonial_style.arrow_setting.enable_arrows == 'true' %} 
+    {% if 'vw' in module.slider_setting.testimonial_style.general.image_height %}
+      {% set query = (module.slider_setting.testimonial_style.general.image_max_height|replace('px','') / (module.slider_setting.testimonial_style.general.image_height|replace('vw', '') / 100))|round %}
+      
+      @media screen and (min-width: 1024px) and (max-width: {{query}}px){
+        .testimonial-{{name}} .quote-arrows {
+          top: {{module.slider_setting.testimonial_style.general.image_height|replace('vw', '') /2}}vw;
+        }
+      }
+      @media screen and (min-width:{{query + 1}}px ){
+        .testimonial-{{name}} .quote-arrows {
+          top: {{module.slider_setting.testimonial_style.general.image_max_height|replace('px', '') /2}}px;
+        }
+      }
+    {% else %}
+      @media screen and (min-width: 1024px) {
+        .testimonial-{{name}} .quote-arrows {
+          top: {{module.slider_setting.testimonial_style.general.image_height|replace('px', '') /2}}px
+        }
+      }
+    {% endif %}
+
+    {% if 'vw' in module.slider_setting.testimonial_style.general.mobile_image_height %}
+      {% set query = (module.slider_setting.testimonial_style.general.mobile_image_max_height|replace('px','') / (module.slider_setting.testimonial_style.general.mobile_image_height|replace('vw', '') / 100))|round %}
+      
+      {% if query < 1023 %}
+        @media screen and (max-width:{{query}}px ){
+          .testimonial-{{name}} .quote-arrows {
+            top: {{module.slider_setting.testimonial_style.general.mobile_image_height|replace('vw', '') /2}}px;
+          }
+        }
+        @media screen and (min-width: {{query +1}}px) and (max-width: 1023px){
+          .testimonial-{{name}} .quote-arrows {
+            top: {{module.slider_setting.testimonial_style.general.mobile_image_height|replace('vw', '') /2}}vw;
+          }
+        }
+      {% else %}
+        @media screen and (max-width: 1023px){
+          .testimonial-{{name}} .quote-arrows {
+            top: {{module.slider_setting.testimonial_style.general.mobile_image_height|replace('vw', '') /2}}vw;
+          }
+        }
+      {% endif %}
+    {% else %}
+      @media screen and (max-width: 1023px) {
+        .testimonial-{{name}} .quote-arrows {
+          top: {{module.slider_setting.testimonial_style.general.mobile_image_height|replace('px', '') /2}}px
+        }
+      }
+    {% endif %}
+    
+    .testimonial-{{name}} .quote-arrows .previous, .testimonial-{{name}} .quote-arrows .next {
+      /* top: {{ module.slider_setting.testimonial_style.arrow_setting.top }}%; */
+      /* font-size: {{ module.slider_setting.testimonial_style.arrow_setting.size }}px; */
+      font-size: 24px;
+      line-height: 1;
+      /* padding: {{ module.slider_setting.testimonial_style.arrow_setting.padding }}; */
+      padding: 8px 14px;
+      /* background: rgba({{ module.slider_setting.testimonial_style.arrow_setting.background_color.color|convert_rgb }}, {{ module.slider_setting.testimonial_style.arrow_setting.background_color.opacity / 100}}); */
+      /* color: rgba({{ module.slider_setting.testimonial_style.arrow_setting.color.color|convert_rgb }}, {{ module.slider_setting.testimonial_style.arrow_setting.color.opacity / 100}}); */
+      color: white;
+      text-decoration: none;
+      border-radius: 100%;
+    }
+    /* .testimonial-{{name}} .quote-arrows .previous:hover, .testimonial-{{name}} .quote-arrows .next:hover {
+      background: rgba({{ module.slider_setting.testimonial_style.arrow_setting.hover_background.color|convert_rgb }}, {{ module.slider_setting.testimonial_style.arrow_setting.hover_background.opacity / 100}});
+      color: rgba({{ module.slider_setting.testimonial_style.arrow_setting.hover_color.color|convert_rgb }}, {{ module.slider_setting.testimonial_style.arrow_setting.hover_color.opacity / 100}});
+    } */
+
+    .testimonial-{{name}} .quote-arrows {
+      max-width: {{module.slider_setting.testimonial_style.arrow_setting.container_max_width}};
+    }
+    .testimonial-{{name}} .quote-arrows .previous {
+      background-image: url('{{module.slider_setting.testimonial_style.arrow_setting.arrow_prev_image.src}}');
+    }
+    .testimonial-{{name}} .quote-arrows .next {
+      background-image: url('{{module.slider_setting.testimonial_style.arrow_setting.arrow_next_image.src}}');
+    }
+  {% endif %}
+
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+    $(".testimonial-{{name}}").tarasTestimonial({
+    quoteEl			 : ".quote-wrap",
+    autoplay     : $(".testimonial-{{name}} .testimonial-autoplay").val(),
+    speed        : $(".testimonial-{{name}} .testimonial-speed").val(), 
+  });
+</script>
+{% end_require_js %}
+{% endif %}
+{% if module.show_title %}
+  <h1>{{module.title}}</h1>
+  <div class="hero__image-mask">&nbsp;</div>
+{% endif %}

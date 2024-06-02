@@ -1,0 +1,61 @@
+<!--
+  templateType: global_partial
+  label: Global header
+-->
+{% text "login-url" label='Login url', export_to_template_context=True, value='' %}
+{% text "login-text" label='Login text', export_to_template_context=True, value='' %}
+{% module "translations_global" path="/isobar-eservice-theme/modules/translations-global", l=, export_to_template_context=True %}
+{% module "global_form_options" path="/isobar-eservice-theme/modules/global/global-form-options", label="global-form-options", export_to_template_context=True %}
+{% module "top_banner" path="/isobar-eservice-theme/modules/global/top-banner", label="top-banner"%}
+<header class="page-header js-page-header">
+    <div class="wrapper page-header__wrapper">
+        <div class="page-header__container">
+            {% set lang = ('' ~ content.language)|lower %}
+            <a {% if lang and (lang !='pl') %}href="/{{lang}}/"{% else %}href="/"{% endif %} class="page-header__logo page-header__logo--primary">
+                <img src="{{get_asset_url('../../images/logos/eservice.svg')}}" class="page-header__logo-img" alt="Logo eService"/>
+            </a>
+            
+            <a href="{{ widget_data['login-url'].value }}" class="page-header__login is-mobile" target="_blank">
+                <img src="{{get_asset_url('../../images/icons/profile_icon.svg')}}" class="page-header__login-img" alt="profile icon to log in button">
+            </a>
+            <button class="page-header__toggle is-mobile js-menu-switcher"></button>
+        </div>
+        <div class="page-header__tools is-desktop">
+            <div class="page-header__tool page-header__tool--first">
+            {% global_partial path='./header-partials/font-switcher.html' %}
+            </div>
+            {% if content.translated_content|length || group.translations %}
+            <div class="page-header__tool">
+                {% global_partial path='./header-partials/lang-switcher.html' %}
+            </div>
+            {% endif %}
+            <div class="page-header__tool">
+                {% global_partial path='./header-partials/search.html' %}
+            </div>
+        </div>
+        <div class="page-header__navigation">
+            <div class="page-header__menu">
+                {% module 'navigation-primary' path='../../modules/menu-section', label='Primary navigation' %}
+            </div>
+            <div class="page-header__buttons is-desktop">
+                <a class="button button--primary" href="{{ widget_data['login-url'].value }}" target="_blank">{{ widget_data['login-text'].value }}</a>
+            </div>
+            <div class="page-header__footer is-mobile">
+                <div class="page-header__tools">
+                    <div class="page-header__tool page-header__tool--search">
+                        {% global_partial path='./header-partials/search.html', extra_classes='test123' %}
+                    </div>
+                    <div class="page-header__tool page-header__tool--font-switcher">
+                        {% global_partial path='./header-partials/font-switcher.html' %}
+                    </div>
+                    {% if content.translated_content|length || group.translations %}
+                    <div class="page-header__tool page-header__tool--lang-switcher">
+                        {% global_partial path='./header-partials/lang-switcher.html' %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% module 'iso-alert' path='../../modules/iso-alert', label='Alert Module' %}

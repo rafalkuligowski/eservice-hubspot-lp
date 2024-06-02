@@ -1,0 +1,17 @@
+[ {
+  "id" : "7d346e38-cf85-6375-a1e5-095d9725654f",
+  "name" : "services_table",
+  "display_width" : null,
+  "label" : "Services table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+}, {
+  "id" : "12108bc1-eaab-2eaa-e5c8-c49bc7775f28",
+  "name" : "services_categories_table",
+  "display_width" : null,
+  "label" : "Services categories table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+} ]

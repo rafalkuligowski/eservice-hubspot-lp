@@ -1,0 +1,38 @@
+<!-- module html  -->
+<div class="gradient-fw-images-module">
+    {% for image in module.images_block %}
+        <div class="gradient-fw-images-module__element-wrapper"  style="width:{{100 // loop.length}}%">
+            <div class="gradient-fw-images-module__image-container">
+                <div class="covering-gradient"
+                {% set opacity_start =  module.start_prc / 100 %}
+                {% set opacity_end =  module.end_prc / 100 %}
+                {% set color = module.gradient_color.color|convert_rgb %}
+
+                style="background-image: linear-gradient(to bottom,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba({{color}}, {{opacity_start}}) {{module.start_pos}}% ,
+                        rgba({{color}}, {{opacity_end}}) 100%);
+                "></div>
+                <img src="{{image.image.src}}" alt="{{image.image.alt}}" {% if module.force_fit %} 
+                    style="
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    "
+                {% endif %} />
+            </div>
+
+            <div class="gradient-fw-images-module__content-container">
+                <h2>{{image.cta_text}}</h2>
+
+                {% if image.link_group.link_field.url.href != "" && image.link_group.link_text != "" %}
+                <a class="button button--secondary" target="{% if image.link_group.link_field.open_in_new_tab %}_blank{% else %}_self{% endif %}" href="{{image.link_group.link_field.url.href}}" tabindex="0">
+                        {{image.link_group.link_text}}
+                {% endif %}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>

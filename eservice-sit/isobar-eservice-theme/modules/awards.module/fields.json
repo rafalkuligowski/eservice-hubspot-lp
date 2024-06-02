@@ -1,0 +1,165 @@
+[ {
+  "id" : "c92f9623-c866-527a-3763-823ff8248d2e",
+  "name" : "main_rewards",
+  "display_width" : null,
+  "label" : "Main rewards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "bec1b528-2b53-cc7d-1a00-fba51157bce1",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "3a8008a3-4393-670d-68a6-8766c022e3e3",
+    "name" : "Image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "bec1b528-2b53-cc7d-1a00-fba51157bce1",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "340ec001-1164-aa93-1ee7-555e5caf6e60",
+    "name" : "year",
+    "display_width" : null,
+    "label" : "Year",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "dee7c8a0-546d-978f-67b6-01c57a128057",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "Image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }
+}, {
+  "id" : "9a01056b-1acf-2269-d436-5fcd8ca184ed",
+  "name" : "timeline",
+  "display_width" : null,
+  "label" : "Timeline",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "b2a5125f-98c8-1992-46a4-a2c64a41c52e",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "b2a5125f-98c8-1992-46a4-a2c64a41c52e",
+    "name" : "year",
+    "display_width" : null,
+    "label" : "Year",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "3407e1c5-afc4-56bb-663f-40634d0e348a",
+    "name" : "award",
+    "display_width" : null,
+    "label" : "Award",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "d6ba000d-46b7-77d4-4820-333e6eb07a4d",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "d6ba000d-46b7-77d4-4820-333e6eb07a4d",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "1289e48b-409c-253b-1915-10cf29aff2f9",
+      "name" : "description",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "award" : { }
+  }
+}, {
+  "id" : "20c3a3ea-d6a6-9aa4-a6fc-50d0c361f479",
+  "name" : "others_awards",
+  "display_width" : null,
+  "label" : "Others awards",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Pozostałe nagrody"
+}, {
+  "id" : "2df1a465-e974-7f7c-194a-f4d9f6efdf0d",
+  "name" : "show_all",
+  "display_width" : null,
+  "label" : "Show all",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Pokaż wszystkie"
+} ]

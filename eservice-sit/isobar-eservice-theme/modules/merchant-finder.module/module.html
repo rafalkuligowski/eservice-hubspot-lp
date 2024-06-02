@@ -1,0 +1,59 @@
+<!-- module html  -->
+{% set source_data = hubdb_table_rows(module.merchants_source) %}
+<script>
+    window.merchantFinderSource = [
+        {% for row in source_data %}
+            {
+                'companyName': '{{row.company_name}}', 
+                'streetName': `{{row.street_name | replace('\n', ' ')}}`, 
+                'postalCode': '{{row.postal_code}}', 
+                'city': '{{row.city}}', 
+                'voivodeship': '{{row.voivodeship}}', 
+                'coordinates': '{{row.coordinates}}'
+            },
+        {% endfor %}
+    ];
+</script>
+<style type="text/css">
+    .merchant-finder__result-element::before {
+        background-image: url('{{module.results_image.src}}');
+    }
+</style>
+<div class="merchant-finder-module">
+    <div class="merchant-finder-module__mode-select-wrapper">
+        <div class="left-column">
+            <button class="merchant-finder-module__mode-select-button merchantFinder-modeSelect" data-mode="voivodeship-mode">Wyszukaj przedstawicieli w województwie</button>
+        </div>
+        <div class="right-column">
+            <span class="localisation-warning">Wymaga podania lokalizacji</span>
+            <div class="right-column__buttons-wrapper">
+                <button class="merchant-finder-module__mode-select-button  merchantFinder-modeSelect" data-mode="closest-mode">Wyszukaj najblizszego przedstawiciela</button>
+                <button class="merchant-finder-module__mode-select-button  merchantFinder-modeSelect" data-mode="radius-mode">Wyszukaj przedstawicieli w zadanym promieniu km</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="merchant-finder-module__mode-input">
+        <div class="merchant-finder-module__mode merchant-finder-module__mode-voivodeship">
+            <label for="voivodeship">Podaj województwo</label>
+            <select id="merchantFinderVoivodeship" name="voivodeship" class='merchant-finder-module__voivodeship-select merchantFinder-voivodeshipSelector'>
+                <option value="0" disabled selected>Wybierz..</option>
+            </select>
+        </div>
+        <div class="merchant-finder-module__mode merchant-finder-module__mode-radius">
+            <label>Podaj promień (w km)</label>
+            <input  class='merchantFinder-radiusInput' id="merchantFinderRadius" name="radius" type="number" placeholder="30"/>
+        </div>
+        <div class="merchant-finder-module__results-button-wrapper">
+            <button class="button button--primary merchant-finder-module__results-button disabled" >Znajdź przedstawicieli</button>
+        </div>
+    </div>
+    <div class="merchant-finder-module__errors hidden">
+        <span class="merchant-finder-module__error geolocation">Zaczytanie lokalizacji nie powiodło się</span>
+    </div>
+    <div class="results-wrapper">
+
+    </div>
+</div>
+
+

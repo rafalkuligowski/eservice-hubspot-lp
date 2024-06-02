@@ -1,0 +1,23 @@
+.isobar-table__wrapper {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.isobar-table__wrapper table.isobar-table{
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.isobar-table.stretched {
+    flex-grow: 1;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.isobar-table__wrapper .isobar-table td p, .isobar-table__wrapper .isobar-table th p  {
+    font-weight: inherit !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}

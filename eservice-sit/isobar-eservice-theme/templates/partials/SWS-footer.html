@@ -1,0 +1,29 @@
+<!--
+  templateType: global_partial
+  label: Landing Page Footer
+-->
+<footer class="footer footer--landing-page">
+  <div class="footer__container">
+
+    {# Copyright #}
+      <div class="row-fluid">
+        {% module_block module 'footer_copyright' path='@hubspot/rich_text', label='Copyright' %}
+          {% module_attribute 'html' %}
+          <div class="dnd-column span8">
+            <div class="sws-footer__left-col">
+              <div style="text-align: center;">
+                <p><span style="font-family: helvetica;">&nbsp;<a href="mailto:partner@eservice.com" rel="noopener">Kontakt</a> &nbsp; <a href="https://www.eservice.pl/informacje-ogolne/polityka-prywatnosci/" rel="noopener">Polityka Prywatności</a> &nbsp; <a href="https://www.sklepywsieci.com/hubfs/reg/Regulamin_promocji_ecommerce.pdf" rel="noopener">Regulamin promocji</a>&nbsp;</span></p>
+                </div>
+            </div>
+          </div>
+          <div class="dnd-column span4">
+            <div class="sws-footer__right-col">
+              <p>Copyright © {{ year }} <a href="https://www.eservice.pl" target="_blank">{{ site_settings.company_name }}</a>. All Rights Reserved.</p>
+            </div>
+          </div>
+          {% end_module_attribute %}
+        {% end_module_block %}
+        </div>
+      </div>
+  </div>
+</footer>

@@ -1,0 +1,7 @@
+.disabled {
+    pointer-events:none;
+}
+#newYearText {
+    border: 3px solid #F83706;
+    padding: 24px;
+}

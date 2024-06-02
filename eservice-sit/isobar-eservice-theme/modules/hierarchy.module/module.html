@@ -1,0 +1,16 @@
+<!-- module html  -->
+<div class="hierarchy-module">
+    <h2 class="center">{{module.title}}</h2>
+    <div class="hierarchy-module__levels-wrapper">
+        {% for level in module.hierarchies %}
+            <div class="hierarchy-module__level hierarchy-module__level--level-{{loop.index}}">
+                {% for person in level.people %}
+                <div class="position-tile">
+                    <h3>{{person.name_surname}}</h3>
+                    <p>{{person.position}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

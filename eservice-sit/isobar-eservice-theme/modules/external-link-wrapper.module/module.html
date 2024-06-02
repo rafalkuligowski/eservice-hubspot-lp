@@ -1,0 +1,45 @@
+<!-- module html  -->
+<div class="external-link-box-wrapper-module">
+    <h3>{{module.external_links_section_title}}</h3>
+    <div class="external-link-box-wrapper-module__row columns{{module.boxes_row_ammount}} {% if module.is_files_list %}files-list {% endif %}">
+        {% for section in module.section_block %}
+            <div class="external-link-box-wrapper-module__external-link-box-columnwrap span{{12//module.boxes_row_ammount}}">
+            {% if ((section.download_link_group.link_field.url.href is truthy) and not(section.more_link_group.more_link.url.href is truthy)) or (not(section.download_link_group.link_field.url.href is truthy) and (section.more_link_group.more_link.url.href is truthy)) %}
+                {% set click_propagate = true %}
+            {% else %} 
+                {% set click_propagate = false %}
+            {% endif %}
+            <div class="external-link-box__wrapper 
+            {% if section.image_field.src %}external-link-box--image-spacing{% else %}centered{% endif %} 
+            {% if click_propagate %}click-propagator{% endif %}
+            ">
+                {% if section.content %}
+                <div class="external-link-box__image">
+                    <img src="{{ section.image_field.src }}" alt="{{section.image_field.alt}}" />
+                </div>
+                {% endif %}
+                <div class="external-link-box__header">
+                    <p>
+                        <strong>{{ section.title_text }}</strong>
+                    </p>
+                </div>
+                {% if section.content %}
+                <div class="external-link-box__content">
+                    {{ section.content }}
+                </div>
+                {% endif %}
+                {% if section.download_link_group.link_field.url.href && section.download_link_group.link_text %}
+                    <div class="external-link-box__link-button-wrapper">
+                        <a href="{{section.download_link_group.link_field.url.href}}" class="button button--primary external-link-box__button" target="{% if section.download_link_group.link_field.open_in_new_tab %}_blank{% else %}_self{% endif %}" tabindex="0">{{section.download_link_group.link_text}}</a>
+                    </div>
+                {% endif %}
+                {% if section.more_link_group.more_link.url.href && section.more_link_group.more_link_text %}
+                    <div class="external-link-box__read-more-wrapper">
+                        <a href="{{section.more_link_group.more_link.url.href}}" class="button external-link-box__more-link" target="{% if section.more_link_group.open_in_new_tab %}_blank{% else %}_self{% endif %}" tabindex="0">{{section.more_link_group.more_link_text}}</a>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

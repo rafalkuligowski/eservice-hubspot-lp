@@ -1,0 +1,271 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Isobar - product page
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper">
+
+  <div class="section">
+    <div class="dnd-row">
+      <div class="dnd-column span12">
+        {% module "module_16051739451843" path="/isobar-eservice-theme/modules/hero-with-buttons"
+       %}
+      </div>
+    </div>
+  </div>
+
+  {% module "breadcrumbs" path="/isobar-eservice-theme/modules/breadcrumbs", label="breadcrumbs" %}
+
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'dnd_area' class='body-container body-container--home', label='Main section' %}
+    
+    {# Image width richtext on side section #}
+    {% dnd_section,
+      vertical_alignment='MIDDLE',
+    %}
+      {% dnd_column
+        width=12,
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/header'
+            value='SafeLink - bezpieczny i szybki link do płatności' ,
+            header_tag='h1'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% dnd_section,
+      vertical_alignment='MIDDLE',
+    %}
+      {% dnd_column,
+        width=5
+      %}
+        {% dnd_row,
+          vertical_alignment='MIDDLE'   
+        %}
+          {% dnd_module path='@hubspot/image',
+            horizontal_alignment='CENTER'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=5,
+        width=7
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text' %}
+            {% module_attribute 'html' %}
+              <p>                
+                Prowadzisz hotel, sieć salonów fryzjerskich, a może kameralny gabinet kosmetyczny? Teraz łatwo połączysz komfort płatności klienta z łatwym zarządzaniem rezerwacjami i transakcjami.
+              </p>
+              <p>
+                SafeLink powstał z myślą o branży usługowej. Nie musisz posiadać sklepu internetowego, by korzystać z wygodnych i bezpiecznych transakcji on-line a jednocześnie łatwo zarządzać terminami wizyt klientów.
+              </p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End of image width richtext on side section #}
+
+    {# Image width richtext on side section #}
+    {% dnd_section,
+      vertical_alignment='MIDDLE',
+    %}
+      {% dnd_column
+        width=7
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text' %}
+            {% module_attribute 'html' %}
+              <h2>
+                CO TO JEST SAFELINK?
+              </h2>
+              <p>                
+                SafeLink to narzędzie w bramce płatniczej eCommerce, które wysyła link do płatności na wskazany adres mailowy. Można swobodnie edytować treść, a także zapisać w szablonie stałe elementy czy też dodać logo swojej firmy.
+              </p>
+              <p>
+                Dzięki temu twój klient będzie mógł całkowicie bezpiecznie opłacić usługę w późniejszym czasie, ale sam określasz ważność takiego linku.
+              </p>
+              <p>
+                Panel do obsługi jak i stałe elementy wiadomości są dostępne w wielu językach.
+              </p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column,
+        width=5,
+        offset=7
+      %}
+        {% dnd_row,
+          vertical_alignment='MIDDLE'   
+        %}
+          {% dnd_module path='@hubspot/image',
+            horizontal_alignment='CENTER'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End of image width richtext on side section #}
+    
+    {# Image width richtext on side section #}
+    {% dnd_section,
+      vertical_alignment='MIDDLE',
+    %}
+      {% dnd_column,
+        width=5
+      %}
+        {% dnd_row,
+          vertical_alignment='MIDDLE'   
+        %}
+          {% dnd_module path='@hubspot/image',
+            horizontal_alignment='CENTER'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=5,
+        width=7
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text' %}
+            {% module_attribute 'html' %}
+              <h2>GWARANTUJEMY</h2>
+              <p>
+                Korzystając z SafeLink można dokonać bezpiecznej płatności przy użyciu:
+              </p>
+              <ul>
+                <li>Visa</li>
+                <li>Mastercard</li>
+                <li>BLIK</li>
+                <li>ePrzelew – ponad 200 banków z całej Polski</li>
+                <li>Apple Pay</li>
+                <li>Google Pay</li>
+                <li>Masterpass</li>
+                <li>Paypal</li>
+              </ul>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End of image width richtext on side section #}
+
+    {# Image width richtext on side section #}
+    {% dnd_section,
+      vertical_alignment='MIDDLE',
+    %}
+      {% dnd_column
+        width=7
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text' %}
+            {% module_attribute 'html' %}
+              <h2>
+                ŁATWOŚĆ W UŻYCIU
+              </h2>
+              <p>                
+                ackoffice do obsługi narzędzia posiada całkowicie intuicyjny interfejs Panelu Merchanta, poszerzony zakres raportowania, pełną możliwość zarządzania transakcjami.<br/>
+                Dzięki temu w prosty sposób można sprawdzić aktualny status transakcji, dokonać częściowego lub całkowitego zwrotu czy też sprawdzić szczegóły rezerwacji.
+              </p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column,
+        width=5,
+        offset=7
+      %}
+        {% dnd_row,
+          vertical_alignment='MIDDLE'   
+        %}
+          {% dnd_module path='@hubspot/image',
+            horizontal_alignment='CENTER'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End of image width richtext on side section #}
+
+    {# Image width richtext on side section #}
+    {% dnd_section,
+      vertical_alignment='MIDDLE',
+    %}
+      {% dnd_column,
+        width=5
+      %}
+        {% dnd_row,
+          vertical_alignment='MIDDLE'   
+        %}
+          {% dnd_module path='@hubspot/image',
+            horizontal_alignment='CENTER'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=5,
+        width=7
+      %}
+        {% dnd_row %}
+          {% dnd_module path='@hubspot/rich_text' %}
+            {% module_attribute 'html' %}
+              <h2>ZYSKUJESZ</h2>
+              <p>
+                SafeLink zapewnia różne metody płatności w jednym miejscu – dzięki natychmiastowemu przekierowaniu do bramki klient sam wybiera w jaki sposób chce dokonać płatności.
+              </p>
+              <P>
+                Narzędzie pozwala zmniejszyć liczbę porzuconych koszyków – klienci chętniej finalizują zakupy lub rezerwację, jeśli nie muszą przechodzić całego procesu od nowa.
+              </P>
+              <P>
+                Dzięki SafeLink zyskujesz skróconą ścieżkę zapłaty za towary, bezpieczeństwo twoich danych i środków, dostęp do funkcjonalnej platformy oraz możliwość sprzedaży nie tylko w PLN, ale także w EUR, USD czy GBP.
+              </P>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End of image width richtext on side section #}
+    
+    {# Shadow boxes section #}
+    {% dnd_section %}
+      {% dnd_module path='/isobar-eservice-theme/modules/shadow-box-wrapper',
+        shadow_boxes_section_title="",
+        section_block = [
+          {
+            title_text:"Dla Firmy:",
+            content: "<p><strong>Wzrost konwersji i przychodów</strong></p><p>Jeśli użytkownik nie zapłaci od razu, to może wrócić do płatności z poziomu swojego maila</p>",
+            is_arrowed: true
+          },
+          {
+            title_text:"Dla Klienta:",
+            content: "<p><strong>Krótszy czas oczekiwania na płatność</strong></p><p>JPozwala opłacić zamówienie bez ponownego przechodzenia procesu zakupowego</p>",
+            is_arrowed: true
+          },
+          {
+            title_text:"Dodatkowe narzędzie marketingowe:",
+            content: "<p>Ty odpowiadasz za treść wiadomości – możesz do niej dodać ofertę handlową i logo swojej firmy</p>",
+            is_arrowed: true
+          }
+        ]
+
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+    {# End of Shadow boxes section #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

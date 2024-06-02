@@ -1,0 +1,36 @@
+<div data-isobar-form='{{ module.form_field.form_id }}'></div>
+
+
+
+{% require_js position="footer" %}
+
+<script>
+    (function ($, CustomValidators, CustomValidation) {
+        const formId = '{{ module.form_field.form_id }}';
+        hbspt.forms.create({
+            portalId: '{{hub_id}}',
+            formId: formId,
+            target: `[data-isobar-form="${formId}"]`,
+            onFormReady: function () {
+                const options = {
+                    formId: formId,
+                    fields: [
+                        {% for item in widget_data.global_form_options.validations %}
+                        {
+                            name: '{{ item.form_field_key }}',
+                            methods: [
+                            {
+                                message: '{{ item.validation_message }}',
+                                method: CustomValidators.{{ item.type_of_validation }},
+                            },
+                            ],
+                        },
+                        {% endfor %}
+                    ],
+                };
+                const customValidation = new CustomValidation(options);
+            },
+        });
+    })(jQuery, CustomValidators, CustomValidation);
+</script>
+{% end_require_js %}

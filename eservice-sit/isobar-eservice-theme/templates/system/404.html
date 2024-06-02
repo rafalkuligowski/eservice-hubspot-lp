@@ -1,0 +1,25 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: Boilerplate - 404 error
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<main id="main-content"  class="body-container-wrapper">
+  <script type="text/javascript">
+    const currentErrorPages = ['en'];
+    const redirectErrorPages = ['hu'];
+    const redirectLang = 'en';
+    const pathArray = window.location.pathname.toLowerCase().substr(1).split('/');
+    if (pathArray.length>=1 && currentErrorPages.includes(pathArray[0])) {
+      window.location.replace(window.location.origin+'/'+pathArray[0]+'/404');
+    } else if (pathArray.length>=1 && redirectErrorPages.includes(pathArray[0])) {
+      window.location.replace(window.location.origin+'/'+ redirectLang +'/404');
+    } else {
+      window.location.replace(window.location.origin+'/404');
+    }
+  </script>
+</main>
+{% endblock body %}

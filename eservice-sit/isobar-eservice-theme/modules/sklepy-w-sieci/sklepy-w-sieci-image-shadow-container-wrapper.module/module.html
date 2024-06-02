@@ -1,0 +1,34 @@
+<!-- module html  -->
+<div class="shadow-image-container shadow-box__wrapper-module">
+    <h3 class="{{module.alignment}}">{{module.shadow_boxes_section_title}}</h3>
+    <div class="shadow-box__wrapper-module__row columns{{module.boxes_row_ammount}}">
+        {% for section in module.section_block %}
+        <div class="shadow-box-wrapper-module__shadow-box-columnwrap span{{12//module.boxes_row_ammount}}">
+            <div class="shadow-box__wrapper" style="{% if section.wrapper_vertical_padding > -1 %}padding-top: {{section.wrapper_vertical_padding}}px; padding-bottom: {{section.wrapper_vertical_padding}}px; {% endif %}{% if section.wrapper_horizontal_padding > -1 %}padding-left: {{section.wrapper_horizontal_padding}}px; padding-right: {{section.wrapper_horizontal_padding}}px;{% endif %}">
+                <div class="shadow-box__image">
+                    <img src="{{ section.image_field.src }}" alt="{{section.image_field.alt}}" style="{% if section.max_image_height > -1 %}max-height: {{section.max_image_height}}px;{% endif %}" />
+                </div>
+                {% if section.title_text %}
+                    <div class="shadow-box__header">
+                        <h3>
+                            {{ section.title_text }}
+                        </h3>
+                    </div>
+                {% endif %}
+
+                {% if section.content %}
+                    <div class="shadow-box__content">
+                        {{ section.content }}
+                    </div>
+                {% endif %}
+
+                {% if section.link_field.url.href %}
+                    <div class="external-link-wrapper">
+                        <a class="button {{section.link_type}}" href="{{section.link_field.url.href}}" target="{% if section.link_field.open_in_new_tab %}_BLANK{% else %}_SELF{% endif %}">{{ section.link_text }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

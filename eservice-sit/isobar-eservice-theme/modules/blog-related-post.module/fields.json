@@ -1,0 +1,27 @@
+[ {
+  "id" : "aff71f92-6602-1ad2-d2e8-e4b5fc34c434",
+  "name" : "related_post",
+  "display_width" : null,
+  "label" : "Related post",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "type" : "page"
+}, {
+  "id" : "d8073bbd-68bd-42d7-9046-cc43f2090c42",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Czytaj więcej"
+} ]

@@ -1,0 +1,169 @@
+[ {
+  "id" : "shadow_boxes_section_title",
+  "name" : "shadow_boxes_section_title",
+  "display_width" : null,
+  "label" : "Shadow boxes section title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Section title"
+}, {
+  "id" : "boxes_row_ammount",
+  "name" : "boxes_row_ammount",
+  "display_width" : null,
+  "label" : "Ammount per row",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 1,
+  "max" : 4,
+  "step" : 1,
+  "type" : "number",
+  "default" : 3
+}, {
+  "id" : "alignment",
+  "name" : "alignment",
+  "display_width" : null,
+  "label" : "Alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "center"
+}, {
+  "id" : "b61bc985-a50f-e1ae-12a4-3edf1dcdccd3",
+  "name" : "section_block",
+  "display_width" : null,
+  "label" : "Section Block",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 20,
+    "sorting_label_field" : "2b068cc4-a0f3-63f6-138a-d3d37bd5a807",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "section_block.image_field",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "section_block.max_image_height",
+    "name" : "max_image_height",
+    "display_width" : null,
+    "label" : "Maximum image height",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : -1
+  }, {
+    "id" : "section_block.wrapper_vertical_padding",
+    "name" : "wrapper_vertical_padding",
+    "display_width" : null,
+    "label" : "Vertical padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : -1
+  }, {
+    "id" : "section_block.wrapper_horizontal_padding",
+    "name" : "wrapper_horizontal_padding",
+    "display_width" : null,
+    "label" : "Horizontal padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "default" : -1
+  }, {
+    "id" : "section_block.title_text",
+    "name" : "title_text",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "section_block.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  }, {
+    "id" : "section_block.link_text",
+    "name" : "link_text",
+    "display_width" : null,
+    "label" : "Link text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "section_block.link_type",
+    "name" : "link_type",
+    "display_width" : null,
+    "label" : "Type of button",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "button--primary", "Blue button, white text" ], [ "button--secondary", "White button with border, blue text" ], [ "", "Regular text link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : ""
+  }, {
+    "id" : "section_block.link_field",
+    "name" : "link_field",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+} ]

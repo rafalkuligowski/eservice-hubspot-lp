@@ -1,0 +1,15 @@
+[ {
+  "id" : "ecf02cca-9374-a894-31e6-b389326ede4c",
+  "name" : "menu_field",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "type" : "menu"
+} ]

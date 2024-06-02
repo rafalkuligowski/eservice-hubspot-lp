@@ -1,0 +1,60 @@
+<style>
+    .clickable-area-module__button {
+        background-image: url({{module.button_icon.src}});
+        height: {{module.button_height}}vw;
+        width: {{module.button_width}}vw;
+        max-height: {{module.button_max_height}}px;
+        max-width: {{module.button_max_width}}px;
+
+    }
+    @media screen and (min-width: 1024px){
+        .clickable-area-module__button:hover, .clickable-area-module__button:active {
+            background-image: url({{module.hover_button_icon.src}});
+        }
+        .clickable-area-module__button{
+            display:block;
+        }
+    }
+
+    {% for item in module.items %}
+        .clickable-area-module #clickableAreaButton{{loop.index}} {
+            {% if item.is_top_related %}
+                top: {{item.vertical_offset}}%;
+                bottom: auto;
+            {% else %}
+                bottom: {{item.vertical_offset}}%;
+                top: auto;
+            {% endif %}
+            {% if item.is_left_related %}
+                left: {{item.horizontal_offset}}%;
+                right: auto;
+            {% else %}
+                right: {{item.horizontal_offset}}%;
+                left: auto;
+            {% endif %}
+            z-index: 2
+        }
+    {% endfor %}
+</style>
+
+<div class="clickable-area-module__title-wrapper">
+    <h2>{{module.title}}</h2>
+</div>
+<div class="clickable-area-module">
+    <div class="clickable-area-module__image-wrapper">
+        <img src="{{module.background_image.src}}" alt="{{module.background_image.alt}}" class="clickable-area-module__background">
+        {% for item in module.items %}
+        <button class="clickable-area-module__button" id="clickableAreaButton{{loop.index}}" role="button" data-text-number="{{loop.index}}">
+            <span class="clickable-area-module__button__list-index">{{loop.index}}</span>
+        </button>
+    {% endfor %}
+    </div>
+    {% for item in module.items %}
+        <!-- mobile image are not needed for now  -->
+        <!-- <img class="clickable-area-module__mobile-image" src="{{item.image.src}}" alt="{{item.image.alt}}"> -->
+        <div class="clickable-area-module__text-section" id="clickableAreaModuleTextSection{{loop.index}}">
+            <div class="clickable-area-module__list-index">{{loop.index}}</div>
+            {{item.text_content}}
+        </div>
+    {% endfor %}
+</div>

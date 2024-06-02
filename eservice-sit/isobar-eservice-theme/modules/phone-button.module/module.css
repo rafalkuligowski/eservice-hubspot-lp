@@ -1,0 +1,61 @@
+.phone-button-module {
+    display: inline-block;
+    height: auto;
+}
+
+.phone-button-module--left {
+    text-align: left;
+}
+
+.phone-button-module--center {
+    text-align: center;
+}
+
+.phone-button-module--right {
+    text-align: right;
+}
+
+@media screen and (max-width: 1023px) {
+    .phone-button-module--mobile-left {
+        text-align: left;
+    }
+    
+    .phone-button-module--mobile-center {
+        text-align: center;
+    }
+    
+    .phone-button-module--mobile-right {
+        text-align: right;
+    }
+}
+
+.phone-button-module .button {
+    margin: 0 auto;
+}
+
+.phone-button-module .phone-button__cta-wrapper a.cta_button.cta_button   {
+    text-decoration: none;
+    line-height: 1.15;
+}
+
+.phone-button--hidden {
+    display: none !important;
+}
+
+.phone-button-module .mobile-button {
+    display: inline-block
+} 
+
+.phone-button-module .desktop-button {
+    display: none;
+} 
+
+@media screen and (min-width: 1024px){
+    .phone-button-module .mobile-button {
+        display: none;
+    } 
+
+    .phone-button-module .desktop-button {
+        display: inline-block;
+    } 
+}

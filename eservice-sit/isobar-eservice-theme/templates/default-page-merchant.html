@@ -1,0 +1,137 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Isobar Default - Merchant, PKO page
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base-merchant.html" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+
+{# styling exceptions for template #}
+
+{% module "partner-image" path="@hubspot/image" label='Menu partner image' export_to_template_context=True %}
+{% text "menu-button-anchor" label='Menu anchor', export_to_template_context=True, value='form' %}
+{% text "login-text" label='Menu anchor text', export_to_template_context=True, value='Zarejestruj swój bonus' %}
+
+<style type="text/css">
+  .merchant-pko-page .template__hero-wrapper {
+    max-width: 50%; 
+    min-height: 44.715vw; 
+    max-height: 860px; 
+    display:flex; 
+    flex-wrap: nowrap; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: stretch;
+  }
+
+  .merchant-pko-page .template__hero-content {
+    display: inline-block; 
+    height: auto; 
+    width: 100%; 
+    flex-grow: 0;
+    color: #0140BE;
+  }
+
+  .merchant-pko-page .template__hero-title, .merchant-pko-page .template__hero-paragraph{
+    color: inherit !important;
+    font-weight: bold;
+  }
+
+  .merchant-pko-page .template__hero-title {
+    font-size: 5vw !important;
+    line-height: 1;
+  }
+
+  .merchant-pko-page .header-w-icon__image {
+    width: auto;
+    max-height: 88px;
+  }
+</style>
+
+<header class="page-header page-header--cba js-page-header">
+  <div class="wrapper page-header__wrapper">
+      <div class="page-header__container">
+          {% set lang = ('' ~ content.language)|lower %}
+          <a href="/" class="page-header__logo page-header__logo--primary">
+              <img src="{{get_asset_url('isobar-eservice-theme/images/logos/eservice.svg')}}" class="page-header__logo-img" alt="Logo eService"/>
+          </a>
+          {% if widget_data['partner-image'].img.src  %}
+          <a href="https://evopayments.com/" class="page-header__logo page-header__logo--partner" target="_blank">
+              <img src="{{ widget_data['partner-image'].img.src }}" class="page-header__logo-img" alt="{{widget_data['partner-image'].img.alt }}" />
+          </a>
+          {% endif %}
+      </div>
+      <button class="page-header__toggle is-mobile js-menu-switcher"></button>
+      <div class="page-header__navigation">
+          {% if widget_data['login-text'].value != "" && widget_data['menu-button-anchor'].value != "" %}
+          <div class="page-header__buttons is-desktop">
+              <a class="button button--primary" href="#{{ widget_data['menu-button-anchor'].value }}">{{ widget_data['login-text'].value }}</a>
+          </div>
+          {% endif %}
+          <div class="page-header__footer is-mobile">
+              {% if widget_data['login-text'].value != "" && widget_data['menu-button-anchor'].value != "" %}
+                  <a class="button button--primary js-menu-switcher" href="#{{ widget_data['menu-button-anchor'].value }}">{{ widget_data['login-text'].value }}</a>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</header>
+
+{# end of styling exceptions for template #}
+<main id="main-content" class="body-container-wrapper merchant-pko-page">
+  
+  {% module "breadcrumbs" path="/isobar-eservice-theme/modules/breadcrumbs", label="breadcrumbs" %}
+
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'dnd_area' class='body-container body-container--home', label='Main section' %}
+    
+    {# Hero section #}
+    {% dnd_section 
+      background_image={
+        'backgroundPosition': 'MIDDLE_RIGHT',
+        'backgroundSize': 'contain',
+        'imageUrl': get_asset_url('isobar-eservice-theme/images/merchant-pko/background.png')
+      },  
+    %}
+      {% dnd_module 
+        path='@hubspot/rich_text',
+      %}
+        {% module_attribute 'html' %}
+        <div class="template__hero-wrapper">        
+          <div class="template__hero-content">
+            <h1 class="template__hero-title">Odbierz<br/>100zł</h1>
+            <p class="template__hero-paragraph">
+              Rozwijaj swój biznes z eService. <br/> <span style="color: #F83706 !important">Sprawdź co jeszcze możesz zyskać.</span>
+            </p>
+            <a href="#howToCollect" class="button button--primary override-exception"> Dowiedz się więcej</a>
+          </div>
+        </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+    {# End Hero section #}
+
+    {# Richtext section #}
+    {% dnd_section %}
+      {% dnd_module path='@hubspot/rich_text' %}
+        {% module_attribute 'html' %}
+        <h1>Coś mocnego</h1>
+        <h3>Powiedz coś więcej czytelnikowi</h3>
+        <p>Nagłówek i druga linia nagłówka mówią nam, co oferujesz, a nagłówek formularza pomaga dobić targu. Tutaj możesz wyjaśnić, dlaczego Twoja oferta jest tak rewelacyjna, że warto dla niej wypełnić formularz.</p>
+        <p>Pamiętaj:</p>
+        <ul>
+        <li>Punktory świetnie</li>
+        <li>prezentują <a href="#">korzyści</a></li>
+        <li>i pomagają zaskarbić sobie klientów.</li>
+        </ul>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+    {# End richtext section #}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

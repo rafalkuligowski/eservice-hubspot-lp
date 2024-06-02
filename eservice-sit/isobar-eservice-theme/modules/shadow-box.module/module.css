@@ -1,0 +1,40 @@
+.shadow-box__wrapper {
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(1, 64, 190 , 0.08);
+  margin-bottom: 8px;
+}
+
+.shadow-box__image {
+  padding-bottom: 24px;
+}
+
+.shadow-box__image img {
+  max-height: 88px;
+  width: auto;
+}
+
+.shadow-box__image header {
+  padding-bottom: 16px;
+}
+
+.shadow-box__header p {
+  margin-bottom: 16px;
+}
+
+.shadow-box__content {
+  padding-bottom: 24px
+}
+
+.shadow-box__content p {
+  margin-bottom: 16px
+}
+
+.shadow-box__content p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,30 @@
+[ {
+  "id" : "7d346e38-cf85-6375-a1e5-095d9725654f",
+  "name" : "services_table",
+  "display_width" : null,
+  "label" : "Services table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+}, {
+  "id" : "e9f7852f-2b07-c0d4-20c2-4b12bfd370b3",
+  "name" : "group_id",
+  "display_width" : null,
+  "label" : "Group ID",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "forced_four",
+  "name" : "forced_four",
+  "display_width" : null,
+  "label" : "Is it forced four in a row",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+} ]

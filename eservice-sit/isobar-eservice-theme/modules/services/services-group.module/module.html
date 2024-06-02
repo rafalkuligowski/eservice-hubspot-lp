@@ -1,0 +1,36 @@
+{% if module.group_id %}
+{% set services = hubdb_table_rows( module.services_table, "&group__contains=" ~ module.group_id ) %}
+{% else %}
+{% set services = hubdb_table_rows( module.services_table ) %}
+{% endif %}
+<div class="services-category">
+    <div class="services-category__items {% if module.forced_four %}services-category__items--force-four{% endif %}">
+        <div class="grid-sizer"></div>
+        {% for service in services %}
+        <div class="e-shadow-box">
+            <div class="e-shadow-box__inner">
+                <div class="e-shadow-box__content e-shadow-box__content--front e-shadow-box__content--center">
+                    <button type="button" class="e-shadow-box__toggle"></button>
+                    <figure class="e-shadow-box__image">
+                        <img src="{{ service.icon.url }}"
+                             alt="{{ service.name }}" class="e-shadow-box__image-el"/>
+                    </figure>
+                    <h3 class="e-shadow-box__title">{{ service.name }}</h3>
+                    <div class="e-shadow-box__description">{{ service.short_description }}</div>
+                    {% if service.custom_page %}
+                    <a href="{{ service.custom_page }}" class="e-shadow-box__link js-service-link">{{ widget_data.translations_global.read_more}}</a>
+                    {% endif %}
+                </div>
+                <div class="e-shadow-box__content e-shadow-box__content--back">
+                    <button type="button" class="e-shadow-box__toggle"></button>
+                    <h3 class="e-shadow-box__title">{{ service.name }}</h3>
+                    <div class="e-shadow-box__description">{{ service.description }}</div>
+                    {% if service.custom_page %}
+                        <a href="{{ service.custom_page }}" class="e-shadow-box__link js-service-link">{{ widget_data.translations_global.read_more}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

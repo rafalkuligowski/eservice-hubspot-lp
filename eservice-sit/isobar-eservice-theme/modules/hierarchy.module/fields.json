@@ -1,0 +1,69 @@
+[ {
+  "id" : "title",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Module title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Rada nadzorcza"
+}, {
+  "id" : "hierarchies",
+  "name" : "hierarchies",
+  "display_width" : null,
+  "label" : "Different level of hierarchies",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 0
+  },
+  "children" : [ {
+    "id" : "hierarchies.people",
+    "name" : "people",
+    "display_width" : null,
+    "label" : "Management list",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 0
+    },
+    "children" : [ {
+      "id" : "hierarchies.people.name_surname",
+      "name" : "name_surname",
+      "display_width" : null,
+      "label" : "Name and surname",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "hierarchies.people.position",
+      "name" : "position",
+      "display_width" : null,
+      "label" : "Company position",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+} ]

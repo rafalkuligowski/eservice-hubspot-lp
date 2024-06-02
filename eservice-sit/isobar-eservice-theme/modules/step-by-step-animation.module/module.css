@@ -1,0 +1,298 @@
+.clear {
+  clear: both;
+}
+
+.step-by-step__wrapper {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 50px 0;
+  width: 100%;
+}
+
+.step-by-step__wrapper:before {
+  display: block;
+  content: "";
+  border-right: dashed 2px #3064CA;
+  position: absolute;
+  height: 0;
+  left: 96px;
+  top: 0;
+  margin: 0 auto;
+  width: 2px;
+  transition: all 3s;
+}
+
+.step-by-step__wrapper.active:before {
+  height: 90%;
+}
+
+.step-by-step__wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%;
+}
+
+.step-by-step__box-wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.step-by-step__box {
+  float: left;
+  width: 100%;
+  clear: both;
+  padding-bottom: 50px;
+  opacity: 0;
+}
+
+.step-by-step__box-wrapper:last-child .step-by-step__box {
+  padding-bottom: 0px;
+}
+
+.step-by-step__image {
+  float: left;
+  text-align: center;
+  width: 192px;
+  height: 192px;
+  margin-right: 2%;
+  position: relative;
+}
+
+.step-by-step__box.active + .step-by-step__path {
+  -webkit-animation-name: path;
+  animation-name: path;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.step-by-step__box-wrapper:first-child .step-by-step__path,
+.step-by-step__box:first-child .step-by-step__image:before {
+  display: none;
+}
+
+.step-by-step__box.active {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.step-by-step__box.active .step-by-step__image:before {
+  -webkit-animation-name: path;
+  animation-name: path;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.step-by-step__image:after {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: dashed 2px #3064CA;
+  display: block;
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  bottom: 100%;
+  border-radius: 50%;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.step-by-step__image img,
+.step-by-step__image svg {
+  padding: 18%;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+  overflow: visible;
+}
+
+.step-by-step__image svg {
+  height: 192px;
+}
+
+.step-by-step__step2 .step-by-step__image svg,
+.step-by-step__step4 .step-by-step__image svg {
+  width: 90%;
+}
+
+.step-by-step__content {
+  float: left;
+  width: 78%;
+}
+
+.step-by-step__content h5 {
+  color: #222222;
+  font-size: 20px;
+  margin: 35px 0;
+}
+
+.animation {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  /* transform-origin: center; */
+}
+
+
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+@-webkit-keyframes path {
+  from {
+      height: 0;
+    }
+  
+    to {
+      height: 100%;
+    }
+  }
+  @keyframes path {
+    from {
+      height: 0;
+    }
+  
+    to {
+      height: 50px;
+    }
+  }
+
+.float-step {
+-webkit-animation-name: float-step;
+  animation-name: float-step;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+}
+
+@keyframes float-step {
+  0%, 100% {
+  transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.float-step2 {
+-webkit-animation-name: float-step2;
+  animation-name: float-step2;
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+}
+@keyframes float-step2 {
+    45%,55% {
+        transform: translatey(0px) rotate(0deg);
+    }
+    50% {
+        transform: translatey(0px) translatex(5px) rotate(-5deg);
+    }
+}
+
+.zoom-step {
+-webkit-animation-name: zoom-step;
+  animation-name: zoom-step;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
+}
+
+@keyframes zoom-step {
+  45%, 55% {
+  transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.delay1 {
+animation-delay: 1s;
+}
+.delay2 {
+animation-delay: 3s;
+}
+.delay3 {
+animation-delay: 0.1s;
+}
+.delay4 {
+animation-delay: 0.2s;
+}
+
+@media screen and (max-width: 1200px) {
+  .step-by-step__content {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .step-by-step__wrapper:before {
+    display: none;
+  }
+  .step-by-step__box-wrapper {
+    width: 50%;
+  }
+  .step-by-step__box-wrapper:nth-child(2n+1){
+    clear: both;
+  }
+  .step-by-step__content {
+    width: 90%;
+  }
+  .step-by-step__image {
+    width: 192px;
+  }
+  .step-by-step__image svg {
+    height: 192px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .step-by-step__box-wrapper {
+    width: 100%;
+  }
+  .step-by-step__content {
+    width: 100%;
+  }
+  .step-by-step__image {
+    width: 192px;
+  }
+  .step-by-step__image svg {
+    height: 192px;
+  }
+}

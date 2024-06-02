@@ -1,0 +1,46 @@
+{% set desktopGutters = module.desktop_columns - 1 %}
+{% set desktopColumnWidth = ( 100 - (desktopGutters * module.desktop_spacing) ) / module.desktop_columns %}
+{% set mobileGutters = module.mobile_columns - 1 %}
+{% set mobileColumnWidth = ( 100 - (mobileGutters * module.mobile_spacing) ) / module.mobile_columns %}
+
+<style>
+    .logo-list--{{name}} {
+        width: {{module.container_width_desktop}}%;
+        padding: {{module.padding_desktop}};
+    }
+
+    .logo-list--{{name}} .logo-list__logo-wrapper {
+        width: {{desktopColumnWidth}}%;
+        margin-right: {{module.desktop_spacing}}%;
+    }
+
+    .logo-list--{{name}} .logo-list__logo-wrapper:nth-child({{module.desktop_columns}}n) {
+        margin-right: 0;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .logo-list--{{name}} {
+            width: {{container_width_mobile}}%;
+            padding: {{module.padding_mobile}};
+        }
+
+        .logo-list--{{name}} .logo-list__logo-wrapper {
+            width: {{mobileColumnWidth}}%;
+            margin-right: {{module.mobile_spacing}}%;
+        }
+        
+        .logo-list--{{name}} .logo-list__logo-wrapper:nth-child({{module.mobile_columns}}n) {
+            margin-right: 0;
+        }
+    }
+</style>
+
+<div class="logo-list--{{name}} logo-list">
+    <div class="logo-list__logos-wrapper">
+        {% for logo in module.logos_group %}
+            <div class="logo-list__logo-wrapper">
+                <img class="logo-list__logo" src="{{logo.src}}" alt="{{logo.alt}}" loading="lazy">
+            </div>
+        {% endfor %}
+    </div>
+</div>
