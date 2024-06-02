@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - sit
+    - uat
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,3 +14,4 @@ jobs:
           src_dir: eservice-sit/isobar-eservice-theme ## ex. src
           dest_dir: eservice-sit/isobar-eservice-theme ## ex. my-theme
           portal_id: ${{ secrets.uat_account_id }}
+          personal_access_key: ${{ secrets.uat_hubspot_personal_access_key }}

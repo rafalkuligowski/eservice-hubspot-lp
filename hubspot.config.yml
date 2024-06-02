@@ -1,0 +1,27 @@
+defaultPortal: eservicesit
+portals:
+  - name: eservicesit
+    portalId: ${{ secrets.hubspot_portal_id }}
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          ${{ secrets.hubspot_access_token }}
+        expiresAt: '2024-06-02T14:46:29.892Z'
+    personalAccessKey: >-
+      ${{ secrets.hubspot_personal_access_key }}
+    accountType: STANDARD
+  - name: eserviceuat
+    portalId: ${{ secrets.uat_account_id }}
+    env: prod
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          ${{ secrets.uat_hubspot_access_token }}
+        expiresAt: '2024-05-29T14:28:10.923Z'
+    personalAccessKey: >-
+      ${{ secrets.uat_hubspot_personal_access_key }}
+    accountType: STANDARD
+  - name: HubSpot CMS Deploy
+    uses: HubSpot/hubspot-cms-deploy-action@v1.7
